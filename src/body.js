@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import './header.css'
 import './body.css'
 import Rest3 from './image/rest1.jpg'
 import Rest2 from './image/rest2.jpg'

@@ -1,6 +1,12 @@
-div.bodyEvent{
+.bodyEvent{
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+.detail{
+  margin-top: 70px
+}
+.restTitle{
+  font-size: 18px
 }
 .body{
   margin-top: 50px;
@@ -17,24 +23,25 @@ img.restaurant{
   margin-top: 70px;
   border-radius: 10px;
 }
-img.logo{
-  margin-left: 80px;
-  height: 50px;
-  padding-top: 50px;
-}
-p{
+p.restText{
   margin-bottom: 1px;
   margin-top: 2px;
   font-family: sans-serif;
+  font-size: 14px;
+  margin-right: 150px
 
 }
 h3{
   font-family: sans-serif;
   font-weight: bold;
 }
-h5{
+h5.info{
   font-family: sans-serif;
   font-weight: lighter;
+  font-size: 12px;
+}
+.restInfo{
+  margin-top: 40px
 }
 button.book{
   border:1px solid #48BC31;-webkit-box-shadow: #B4B5B5 7px 7px 7px  ;-moz-box-shadow: #B4B5B5 7px 7px 7px ; box-shadow: #B4B5B5 7px 7px 7px  ; -webkit-border-radius: 10px; -moz-border-radius: 10px;border-radius: 10px;font-size:12px;font-family:helvetica, sans-serif; padding: 10px 10px 10px 10px; text-decoration:none; display:inline-block;text-shadow: 0px 0px 0 rgba(0,0,0,0.3);font-weight:bold; color: #FFFFFF;
@@ -68,24 +75,7 @@ button.home{
    background-image: linear-gradient(to bottom, #68D253, #28A80F);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#68D253, endColorstr=#28A80F);
   margin-left: 1000px;
 }
-div.eventInfo{
-  margin-top: 50px
-}
-div.detail{
-  margin-top: 70px
-}
-div.eventText{
-  margin-top: 40px
-}
 
-h5.event{
-
-  font-size: 13px;
-
-}
-h3.eventTitle{
-  font-size: 16px;
-}
 p.eventText{
   font-size: 15px;
   margin-bottom: 1px;
