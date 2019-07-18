@@ -1,6 +1,9 @@
 import React, {Component} from 'react'
 import './event.css'
 import rest1 from './image/rest1.jpg'
+// import DatePicker from "react-datepicker";
+
+import "react-datepicker/dist/react-datepicker.css";
 
 
 
