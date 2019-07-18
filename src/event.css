@@ -12,10 +12,12 @@ div.bodyEvent{
   margin-right: 80px
 }
 img.restaurant{
-  height: 450px;
+  height: 350px;
+  width: 450px;
   margin-left: 90px;
   margin-top: 70px;
   border-radius: 10px;
+
 }
 img.logo{
   margin-left: 80px;
@@ -23,9 +25,10 @@ img.logo{
   padding-top: 50px;
 }
 p{
-  margin-bottom: 1px;
+  font-size: 14px;
   margin-top: 2px;
   font-family: sans-serif;
+  margin-right: 90px
 
 }
 h3{

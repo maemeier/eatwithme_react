@@ -17,10 +17,8 @@ class Event extends Component{
                 <div className="detail">
                   <h3 className="eventTitle">LET'S DINNER THIS FRIDAY!</h3>
                     <div className="eventText">
-              <p>Lorem ipsum dolor sit amet, onsectetur adipiscing elit ipsum dolor </p>
-              <p>sit amet, onsectetur adipiscing elit magna aliqua. ad minim veniam,</p>
-              <p>sit amet, onsectetur adipiscing elit magna aliqua. ad minim veniam,</p>
-              <p>sit amet, onsectetur adipiscing elit magna aliqua. ad minim veniam,</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. icia deserunt mollit anim id est laborum. </p>
+
                     </div>
               <div className="eventInfo">
               <h5 className="event">Date: 12 August 2019</h5>
