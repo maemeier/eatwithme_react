@@ -11,6 +11,8 @@ img.logo1{
   margin-left: 60px;
 }
 .restaurantBox{
+  display: grid;
+  grid-auto-rows: 1fr 1fr;
   width: 300px;
   height: 200px
 }

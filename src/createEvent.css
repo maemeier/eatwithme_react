@@ -13,3 +13,6 @@ form{
 .createEventButton{
   margin-left: 200px
 }
+button#input-group-append{
+  margin: 0;
+}

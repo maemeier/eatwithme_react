@@ -37,13 +37,13 @@ class createEvent extends Component{
 
             </form>
 
-            <div class="input-group">
-    <div class="custom-file">
-      <input type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04"/>
-      <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
+            <div className="input-group">
+    <div className="custom-file">
+      <input type="file" className="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04"/>
+      <label className="custom-file-label" for="inputGroupFile04">Choose file</label>
     </div>
-    <div class="input-group-append">
-      <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Button</button>
+    <div className="input-group-append">
+      <button className="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Button</button>
     </div>
   </div>
 

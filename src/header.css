@@ -24,18 +24,18 @@ img.signup{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 
-  width: 500px
+  width: 350px
 }
 .food1{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  width: 40px;
+  width: 10px;
 }
 p.food{
   color: #333333;
   font-family: sans-serif;
   margin-top: 50px;
-  margin-left: 10px
+  margin-left: 8px
 }
 .logoAndButton{
   display: grid;
@@ -103,7 +103,7 @@ h6{
   font-size: 14px;
   margin-top: 1px;
   margin-bottom: 2px;
-  margin-left: 40px;
+  margin-left: 10px;
 }
 h6.title{
   font-weight: bold;
