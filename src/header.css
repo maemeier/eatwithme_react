@@ -4,6 +4,12 @@ img.logo1{
   margin-top: 20px;
   margin-left: 60px;
 }
+img.signup{
+  width: 30px;
+  height: 30px;
+  margin-top: 40px;
+  margin-left: 500px;
+}
 .header{
   background-color: #F7F7F7;
   border-radius: 0px 0px 280px 0px;
@@ -13,6 +19,12 @@ img.logo1{
   background-repeat: no-repeat;
   height: 450px
 
+}
+.logoAndButton{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  height: 60px
 }
 /* img.signup{
   height: 30px;
@@ -43,6 +55,7 @@ span.food{
   font-family: sans-serif;
   color: #333333;
   font-size: 12px;
+  margin-top: 20px;
 
 }
 h3{

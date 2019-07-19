@@ -3,6 +3,9 @@ import './body.css'
 import Rest3 from './image/rest1.jpg'
 import Rest2 from './image/rest2.jpg'
 import Rest1 from './image/rest3.jpg'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+
 
 
 class Body extends Component{
