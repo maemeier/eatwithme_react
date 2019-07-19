@@ -23,14 +23,33 @@ class Header extends Component{
         <h5>sunt in culpa qui officia deserunt mollit anim id est laborum.</h5>
         <h5>sunt in culpa qui officia deserunt mollit anim id est laborum.</h5>
         <h5>sunt in culpa qui officia deserunt mollit anim id est laborum.</h5>
-      
+
 
         <button>CREATE EVENT</button>
         <br />
-        <img className="food"src={pizza} alt="pizza"/> <span className="food">FOOD</span>
-        <img className="food"src={drink} alt="drink"/> <span className="food">DRINK</span>
-        <img className="food"src={bread} alt="bread"/> <span className="food">BAKERY</span>
+        <div className="iconHeader">
+          <div className="food1">
+            <img className="food"src={pizza} alt="pizza"/>
+            <p className="food">FOOD</p> 
 
+          </div>
+
+
+            <div className="food1">
+              <img className="food"src={drink} alt="pizza"/>
+              <p className="food">DRINK</p>
+            </div>
+
+            <div className="food1">
+              <img className="food"src={bread} alt="pizza"/>
+              <p className="food">BAKERY</p>
+            </div>
+
+
+
+
+
+        </div>
       </div>
     );
   }
