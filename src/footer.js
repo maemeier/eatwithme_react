@@ -10,6 +10,7 @@ import './footer.css'
 class Footer extends Component{
   render(){
     return (
+      <Footer>
       <div className="footer">
 
         <div className="iconFooter">
@@ -18,6 +19,7 @@ class Footer extends Component{
 
 
     </div>
+    </Footer>
     );
   }
 }

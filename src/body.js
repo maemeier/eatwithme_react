@@ -23,28 +23,28 @@ class Body extends Component{
           <h2>RECOMMENDED BY US </h2>
 
            <div className="wrapper">
-             <div>
+             <div className="restaurantBox">
                <img className="sponser" src={Rest3} alt="rest1"/>
                <h6 className="title">OISHI RESTAURANT</h6>
                <h6>Phi Phi Island, Thailand</h6>
 
               </div>
 
-              <div>
+              <div className="restaurantBox">
                <img className="sponser"src={Rest2} alt="rest1"/>
                <h6 className="title">JUNGLE CLUB</h6>
                <h6>Phi Phi Island, Thailand</h6>
 
              </div>
 
-             <div>
+             <div className="restaurantBox">
                <img className="sponser"src={Rest1} alt="rest1"/>
                <h6 className="title">BREAKFAST ON SUNDAY</h6>
                <h6>Phi Phi Island, Thailand</h6>
 
              </div>
 
-             <div>
+             <div className="restaurantBox">
                <img className="sponser"src={Rest1} alt="rest1"/>
                <h6 className="title">BREAKFAST ON SUNDAY</h6>
                <h6>Phi Phi Island, Thailand</h6>
