@@ -5,6 +5,7 @@ import pizza from './image/pizza.png'
 import drink from './image/drink.png'
 import bread from './image/bread.png'
 import signup from './image/signup.png'
+import {Link} from 'react-router-dom'
 
 
 
@@ -24,13 +25,14 @@ class Header extends Component{
         <h5>sunt in culpa qui officia deserunt mollit anim id est laborum.</h5>
         <h5>sunt in culpa qui officia deserunt mollit anim id est laborum.</h5>
 
-
+        <Link to="/event">
         <button>CREATE EVENT</button>
+        </Link>
         <br />
         <div className="iconHeader">
           <div className="food1">
             <img className="food"src={pizza} alt="pizza"/>
-            <p className="food">FOOD</p> 
+            <p className="food">FOOD</p>
 
           </div>
 
