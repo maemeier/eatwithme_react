@@ -6,6 +6,12 @@ import rest4 from './image/jan1.jpg'
 
 
 class Restaurant extends Component{
+
+  state ={
+    restaurant: this.props.restaurant
+  }
+
+
   render(){
     return (
       <div className="event">
