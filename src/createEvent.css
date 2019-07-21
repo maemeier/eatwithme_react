@@ -16,3 +16,8 @@ form{
 button#input-group-append{
   margin: 0;
 }
+p.selectDate{
+  margin-left: 0px;
+  color: black;
+  font-size: 15px
+}

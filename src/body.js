@@ -1,15 +1,27 @@
 import React, {Component} from 'react'
 import './body.css'
 import Rest3 from './image/rest1.jpg'
-
+import axios from 'axios'
 import Rest1 from './image/rest3.jpg'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faCoffee } from '@fortawesome/free-solid-svg-icons'
-
-
-
-
 class Body extends Component{
+state = {
+  event:["mae"]
+}
+
+componentWillMount() {
+  		axios.get('http://localhost:4000/api/getEvent').then((res)=>{
+        this.setState({event: res.data})
+        console.log(this.state.event[0].title)
+      })
+  	}
+
+
+
+
+
+
   render(){
     return (
 
@@ -27,8 +39,13 @@ class Body extends Component{
            <div className="wrapper">
              <div className="restaurantBox">
                <img className="sponser" src={Rest3} alt="rest1"/>
+                 {
+                   this.state.event.map((c) => {
+                     return
+                   })
+                 }
 
-               <h6 className="title">OISHI RESTAURANT</h6>
+             <h6 className="title">{this.state.event[0].title}</h6>
                <h6 className="city">Phi Phi Island, Thailand</h6>
               </div>
 

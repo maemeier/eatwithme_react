@@ -4,7 +4,8 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import App from './App'
 
 // import Event from './event'
-import CreateEvent from './createEvent'
+// import CreateEvent from './createEvent'
+import CreateRestaurant from './createRestaurant'
 
 class Routes extends Component {
 //state
@@ -17,7 +18,7 @@ render() {
   return (
     <BrowserRouter>
       <Switch>
-      <Route path ="/createEvent" component={CreateEvent} />
+      <Route path ="/createEvent" component={CreateRestaurant} />
 
       <Route path ="/" component={App} />
       </Switch>

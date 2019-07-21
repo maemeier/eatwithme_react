@@ -1,19 +1,19 @@
 import React, {Component} from 'react'
 import './createEvent.css'
-import "react-datepicker/dist/react-datepicker.css";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+
 
 
 import Logo from './image/logoeat.png'
 
 
 
-class createEvent extends Component{
+class createRestaurant extends Component{
   state ={
     title: '',
     body: '',
-    person: '',
+    address: '',
+    tel: '',
+    price: '',
     image: '',
 
   }
@@ -36,20 +36,19 @@ class createEvent extends Component{
             </div>
 
             <div class="form-group">
-              <label for="formGroupExampleInput2">Number of Person</label>
+              <label for="formGroupExampleInput2">Address: </label>
               <input type="text" class="form-control" id="formGroupExampleInput2" placeholder=" number only"/>
             </div>
 
-            </form>
-            <p className="selectDate"> Selete Date and Time:</p><DatePicker
-    selected={this.state.startDate}
-    onChange={this.handleChange}
-    showTimeSelect
-    timeFormat="HH:mm"
-    timeIntervals={15}
-    dateFormat="MMMM d, yyyy h:mm aa"
-    timeCaption="time"
-/>
+            <div class="form-group">
+              <label for="formGroupExampleInput2">Tel: </label>
+              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder=" number only"/>
+            </div>
+
+            <div class="form-group">
+              <label for="formGroupExampleInput2">Price: </label>
+              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder=" number only"/>
+            </div>
 
             <div className="input-group">
     <div className="custom-file">
@@ -60,6 +59,12 @@ class createEvent extends Component{
       <button className="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Button</button>
     </div>
   </div>
+
+
+
+
+            </form>
+
 
 
 
@@ -77,4 +82,4 @@ class createEvent extends Component{
 }
 
 
-export default createEvent
+export default createRestaurant

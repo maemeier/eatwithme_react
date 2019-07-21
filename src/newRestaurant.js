@@ -13,7 +13,7 @@ class NewRestaurant extends Component{
   }
 
   //function
-  
+
   // Render
   render(){
       return (
@@ -32,6 +32,8 @@ class NewRestaurant extends Component{
               </div>
             </form>
         </div>
+//
+
 
 
           )

@@ -22,16 +22,16 @@ class Restaurant extends Component{
               </div>
                 <div className="detail">
 
-                  <h3 className="restTitle">OISHI BUFFET RESTAURANT</h3>
+                  <h3 className="restTitle">{this.props.restaurant.title}</h3>
                     <div className="eventText">
-                    <p className="restText"> OISHI EATERIUM”, the new definition of Japanese restaurant, allows you to experience the taste that leads you to Japan under a harmonious blend of 3 concepts, EAT-EXPLORE-PREMIUM. Appetizing Japanese food is served  with selected ingredients and new initiatives that are finely integrated with Japanese dining culture. This is the first experience of eating with enjoyment through a wide array of flavors.</p>
+                    <p className="restText"> {this.props.restaurant.body}</p>
 
 
                     </div>
               <div className="restInfo">
-              <h5 className="info">Address: <span className="address"> Siam Paragon, Bangkok </span></h5>
-              <h5 className="info">Tel: <span className="address"> 02-787-2783 </span></h5>
-              <h5 className="info">Price: <span className="address"> 400 -1200 Baht </span></h5>
+              <h5 className="info">Address: <span className="address"> {this.props.restaurant.address} </span></h5>
+              <h5 className="info">Tel: <span className="address"> {this.props.restaurant.tel} </span></h5>
+              <h5 className="info">Price: <span className="address"> {this.props.restaurant.price} Baht </span></h5>
 
               </div>
             </div>
