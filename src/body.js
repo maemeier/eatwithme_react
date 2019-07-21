@@ -12,8 +12,10 @@ state = {
 
 componentWillMount() {
   		axios.get('http://localhost:4000/api/getEvent').then((res)=>{
+        console.log(res.data);
         this.setState({event: res.data})
         console.log(this.state.event[0].title)
+        console.log(this.state.event[0].city)
       })
   	}
 
@@ -37,17 +39,21 @@ componentWillMount() {
           <h2>RECOMMENDED BY US </h2>
 
            <div className="wrapper">
-             <div className="restaurantBox">
-               <img className="sponser" src={Rest3} alt="rest1"/>
                  {
                    this.state.event.map((c) => {
-                     return
+
+                     return(
+                         <div className="restaurantBox">
+                           <img className="sponser" src={c.image} alt="rest1"/>
+                       <h6 className="title" >{c.title} </h6>
+                       <h6 className="city">{c.city}, Thailand</h6>
+                         </div>
+                     )
                    })
                  }
 
-             <h6 className="title">{this.state.event[0].title}</h6>
-               <h6 className="city">Phi Phi Island, Thailand</h6>
-              </div>
+
+
 
 
 
@@ -65,28 +71,7 @@ componentWillMount() {
               <h6>Date: 20 August 2019</h6>
             </div>
 
-            <div>
-              <img className="sponser"src={Rest1} alt="rest1"/>
-              <h6 className="title">BREAKFAST ON SUNDAY</h6>
-              <h6>Phi Phi Island, Thailand</h6>
-              <h6>Date: 20 August 2019</h6>
-            </div>
-
-            <div>
-              <img className="sponser"src={Rest1} alt="rest1"/>
-              <h6 className="title">BREAKFAST ON SUNDAY</h6>
-              <h6>Phi Phi Island, Thailand</h6>
-              <h6>Date: 20 August 2019</h6>
-            </div>
-
-            <div>
-              <img className="sponser"src={Rest1} alt="rest1"/>
-              <h6 className="title">BREAKFAST ON SUNDAY</h6>
-              <h6>Phi Phi Island, Thailand</h6>
-              <h6>Date: 20 August 2019</h6>
-            </div>
-
-
+          
           </div>
 
 
