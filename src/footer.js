@@ -1,9 +1,6 @@
 import React, {Component} from 'react'
 import './footer.css'
-// import facebook from './image/facebook.png'
-// import instagram from './image/instagram.png'
-// import twitter from './image/twitter.png'
-// import whatsapp from './image/whatsapp.png'
+
 
 
 

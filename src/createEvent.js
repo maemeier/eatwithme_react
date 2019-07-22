@@ -36,11 +36,9 @@ class createEvent extends Component{
             </div>
 
             <div class="form-group">
-              <label for="formGroupExampleInput2">Number of Person</label>
+              <label for="formGroupExampleInput2">Number of Persons</label>
               <input type="text" class="form-control" id="formGroupExampleInput2" placeholder=" number only"/>
             </div>
-
-            </form>
             <p className="selectDate"> Selete Date and Time:</p><DatePicker
     selected={this.state.startDate}
     onChange={this.handleChange}
@@ -51,15 +49,9 @@ class createEvent extends Component{
     timeCaption="time"
 />
 
-            <div className="input-group">
-    <div className="custom-file">
-      <input type="file" className="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04"/>
-      <label className="custom-file-label" for="inputGroupFile04">Choose file</label>
-    </div>
-    <div className="input-group-append">
-      <button className="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Button</button>
-    </div>
-  </div>
+            </form>
+
+
 
 
 

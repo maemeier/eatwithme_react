@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import './createEvent.css'
-
+import axios from 'axios'
 
 
 import Logo from './image/logoeat.png'
@@ -17,6 +17,16 @@ class createRestaurant extends Component{
     image: '',
 
   }
+
+  componentWillMount() {
+    		axios.get('http://localhost:4000/api/event').then((res)=>{
+          console.log(res.data);
+          this.setState({event: res.data})
+
+          console.log(this.state.event[0].title)
+          console.log(this.state.event[0].city)
+        })
+      }
   render(){
     return (
       <div >

@@ -15,7 +15,9 @@ class Header extends Component{
       <div className="header">
         <div className="logoAndButton">
           <img className="logo" src={logo} alt="logo" />
+          <Link to="/signup">
           <img className="signup" src={signup} alt="signup" />
+          </Link>
         </div>
 
         <h1>EAT WITH ME</h1>

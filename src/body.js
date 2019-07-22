@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
 import './body.css'
 
-import axios from 'axios'
+import axios from 'axios';
+
 import Rest1 from './image/rest3.jpg'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faCoffee } from '@fortawesome/free-solid-svg-icons'

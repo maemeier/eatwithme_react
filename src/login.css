@@ -1,12 +1,7 @@
 body{
   background-color: #EBEBEB;
 }
-.box{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
 
-
-}
 .signup{
   background-color: white;
 
@@ -19,9 +14,9 @@ body{
   background: rgb(104,210,83);
   background: linear-gradient(90deg, rgba(104,210,83,1) 0%, rgba(40,168,15,1) 100%);
   margin-top: 150px;
-  margin-right: 150px;
+  margin-right: 100px;
   height: 400px;
-  box-shadow: 0 5px 20px rgba(0,0,0,.15)
+
 
 }
 
