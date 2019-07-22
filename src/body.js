@@ -1,22 +1,36 @@
 import React, {Component} from 'react'
 import './body.css'
-import Rest3 from './image/rest1.jpg'
+
 import axios from 'axios'
 import Rest1 from './image/rest3.jpg'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 class Body extends Component{
 state = {
-  event:["mae"]
+  event:["mae"],
+  restaurant: ["mae"]
+
+
 }
 
 componentWillMount() {
   		axios.get('http://localhost:4000/api/getEvent').then((res)=>{
         console.log(res.data);
         this.setState({event: res.data})
+
         console.log(this.state.event[0].title)
         console.log(this.state.event[0].city)
       })
+      axios.get('http://localhost:4000/api/getRestaurant').then((res)=>{
+        console.log(res.data);
+        this.setState({restaurant: res.data})
+
+        console.log(this.state.restaurant[0].title)
+        console.log(this.state.restaurant[0].city)
+      })
+
+
+
   	}
 
 
@@ -40,7 +54,7 @@ componentWillMount() {
 
            <div className="wrapper">
                  {
-                   this.state.event.map((c) => {
+                   this.state.restaurant.map((c) => {
 
                      return(
                          <div className="restaurantBox">
@@ -51,28 +65,25 @@ componentWillMount() {
                      )
                    })
                  }
-
-
-
-
-
-
-
-
-
           </div>
 
           <h2>NEW EVENTS </h2>
-          <div className="wrapper">
-            <div>
-              <img className="sponser"src={Rest1} alt="rest1"/>
-              <h6 className="title">BREAKFAST ON SUNDAY</h6>
-              <h6>Phi Phi Island, Thailand</h6>
-              <h6>Date: 20 August 2019</h6>
-            </div>
+            <div className="wrapper">
+                  {
+                    this.state.event.map((c) => {
 
-          
-          </div>
+                      return(
+                          <div>
+                            <img className="sponser" src={c.image} alt="rest1"/>
+                        <h6 className="title" >{c.title} </h6>
+                        <h6 className="city">{c.city}, Thailand</h6>
+                        <h6>{c.date}</h6>
+
+                          </div>
+                      )
+                    })
+                  }
+           </div>
 
 
 
@@ -81,6 +92,7 @@ componentWillMount() {
     );
   }
 }
+
 
 
 export default Body
