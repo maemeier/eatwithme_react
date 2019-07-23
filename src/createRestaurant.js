@@ -19,7 +19,7 @@ class createRestaurant extends Component{
   }
 
   componentWillMount() {
-    		axios.get('http://localhost:4000/api/event').then((res)=>{
+    		axios.post('http://localhost:4000/api/event').then((res)=>{
           console.log(res.data);
           this.setState({event: res.data})
 

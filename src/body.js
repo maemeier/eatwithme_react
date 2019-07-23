@@ -3,9 +3,10 @@ import './body.css'
 
 import axios from 'axios';
 
-import Rest1 from './image/rest3.jpg'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeart } from '@fortawesome/free-solid-svg-icons'
+
 class Body extends Component{
 state = {
   event:["mae"],
@@ -75,11 +76,12 @@ componentWillMount() {
 
                       return(
                           <div>
+                            <a href={`/events/${c._id}`}>
                             <img className="sponser" src={c.image} alt="rest1"/>
-                        <h6 className="title" >{c.title} </h6>
-                        <h6 className="city">{c.city}, Thailand</h6>
-                        <h6>{c.date}</h6>
 
+                            <h6 className="title" >{c.title} <FontAwesomeIcon icon={faHeart} style={{color:"#E55681"}} /></h6>
+                            <h6 className="city">{c.city}, Thailand</h6>
+                            </a>
                           </div>
                       )
                     })

@@ -7,6 +7,8 @@ import App from './App'
 // import CreateEvent from './createEvent'
 import CreateRestaurant from './createRestaurant'
 import Signup from './signup'
+import Login from './login'
+import Event from './event'
 
 class Routes extends Component {
 //state
@@ -19,10 +21,12 @@ render() {
   return (
     <BrowserRouter>
       <Switch>
-      <Route path ="/createEvent" component={CreateRestaurant} />
-      <Route path ="/signup" component={Signup} />
+        <Route path="/events/:id" component={Event} />
+        <Route path ="/createEvent" component={CreateRestaurant} />
+        <Route path ="/signup" component={Signup} />
+        <Route path ="/login" component={Login} />
 
-      <Route path ="/" component={App} />
+        <Route path ="/" component={App} />
       </Switch>
     </BrowserRouter>
   )

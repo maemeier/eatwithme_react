@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import axios from 'axios'
 import './signup.css'
 import logo from './image/logoeat.png'
+import {Link} from 'react-router-dom'
 
 class Signup extends Component{
   // data
@@ -55,7 +56,9 @@ render() {
                 <input type="password" className="form-control" placeholder="Password..." onChange={(e) => this.changePassword(e)}/>
               </div>
               <button className="btn btn-success">Signup</button>
-              <p>Already have account? Log in</p>
+
+              <p>Already have account? <Link to="/login">Log in</Link></p>
+
             </form>
           </div>
         </div>

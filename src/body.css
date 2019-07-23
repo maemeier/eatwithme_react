@@ -14,7 +14,8 @@ img.logo1{
   display: grid;
   grid-auto-rows: 1fr 1fr;
   width: 300px;
-  height: 200px
+  height: 200px;
+
 }
 
 button{
@@ -35,10 +36,14 @@ h1 {
 
 }
 h2{
-  margin-top: 40px;
+
   font-size: 18px;
   font-weight: bold;
   margin-left: 10px;
+}
+a:link{
+  text-decoration: none;
+
 }
 span.food{
   margin-left: 10px;
@@ -103,12 +108,15 @@ img.logo{
 img.rest1{
   height: 100px;
   width: 100px;
+  border-radius: 10px
+
 }
 .sponser{
   padding-left: 50px;
   padding-right: 50px;
 
   padding: 10px;
+
 
 
 }
@@ -136,4 +144,7 @@ span.restaurants{
 }
 p.restBold{
   font-weight: bold;
+}
+FontAwesomeIcon{
+  margin-left: 10px
 }

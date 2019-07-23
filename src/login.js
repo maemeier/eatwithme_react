@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import './login.css'
 import axios from 'axios'
+import logo from './image/logoeat.png'
 
 
 
@@ -42,8 +43,10 @@ render() {
 		return (
 			<div className="row">
 				<div className="col-4 offset-4">
+            <img className="logoSignup" src={logo} alt="logo" />
 					<div className="card signup">
 						<div className="card-body">
+
 							<form onSubmit={(e) => this.login(e)}>
 								<div className="form-group">
 									<input type="email" className="form-control" placeholder="Email..." value={this.state.email} onChange={(e) => this.changeEmail(e)} />
