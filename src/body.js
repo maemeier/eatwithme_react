@@ -10,7 +10,8 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons'
 class Body extends Component{
 state = {
   event:["mae"],
-  restaurant: ["mae"]
+  restaurant: ["mae"],
+
 
 
 }
@@ -31,13 +32,7 @@ componentWillMount() {
         console.log(this.state.restaurant[0].city)
       })
 
-
-
   	}
-
-
-
-
 
 
   render(){
@@ -48,28 +43,29 @@ componentWillMount() {
         <div className="content">
 
           <h3>LOREM IPSUM DOLOR SIT AMET</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-          <p>sed do eiusmod tempor incididunt ut labore et dolore ident,</p>
-          <p>sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-          <h2>RECOMMENDED BY US </h2>
 
+        </div>
+        <div className="recommend">
+          <p className="recommend">RECOMMENDED BY US </p>
+        </div>
            <div className="wrapper">
                  {
                    this.state.restaurant.map((c) => {
 
                      return(
                          <div className="restaurantBox">
+                           <a href={`/restaurant/${c._id}`}>
                            <img className="sponser" src={c.image} alt="rest1"/>
+                           </a>
                        <h6 className="title" >{c.title} </h6>
-                       <h6 className="city">{c.city}, Thailand</h6>
+                       <h6 className="city">{c.city}, Thailand ({c.like})</h6>
                          </div>
                      )
                    })
                  }
           </div>
 
-          <h2>NEW EVENTS </h2>
+          <p className="recommend">NEW EVENT </p>
             <div className="wrapper">
                   {
                     this.state.event.map((c) => {
@@ -78,10 +74,10 @@ componentWillMount() {
                           <div>
                             <a href={`/events/${c._id}`}>
                             <img className="sponser" src={c.image} alt="rest1"/>
-
-                            <h6 className="title" >{c.title} <FontAwesomeIcon icon={faHeart} style={{color:"#E55681"}} /></h6>
-                            <h6 className="city">{c.city}, Thailand</h6>
                             </a>
+                            <h6 className="title" >{c.title} <FontAwesomeIcon icon={faHeart} style={{color:"#E55681"}} /> (12)</h6>
+                            <h6 className="city">{c.city}, Thailand</h6>
+
                           </div>
                       )
                     })

@@ -6,7 +6,9 @@
   margin-top: 70px
 }
 .restTitle{
-  font-size: 18px
+  font-size: 18px;
+  text-align: left;
+  margin: 0px;
 }
 .body{
   margin-top: 50px;
@@ -25,14 +27,16 @@ img.restaurant{
   border-radius: 10px;
 }
 .eventText{
-margin-top: 30px
+margin-top: 30px;
+height: 200px;
+width: 500px;
 }
 p.restText{
-  margin-bottom: 1px;
   margin-top: 2px;
   font-family: sans-serif;
   font-size: 14px;
-  margin-right: 150px
+  text-align: justify;
+
 
 }
 h3{
@@ -43,12 +47,14 @@ h5.info{
   font-family: sans-serif;
   font-weight: bold;
   font-size: 14px;
+  text-align: left;
 }
 span{
   font-weight: lighter;
 }
-.restInfo{
-  margin-top: 40px
+div.restInfo{
+  margin: 0px;
+  padding: 0px;
 }
 
 button.signup{

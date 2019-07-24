@@ -35,11 +35,15 @@ h1 {
   margin-left: 60px;
 
 }
-h2{
+p.recommend{
 
-  font-size: 18px;
+  font-size: 13px;
   font-weight: bold;
-  margin-left: 10px;
+  margin: 10px;
+}
+div.recommend{
+
+   margin: 0;
 }
 a:link{
   text-decoration: none;

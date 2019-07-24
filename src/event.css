@@ -6,13 +6,12 @@ div.bodyEvent{
   margin-top: 50px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-
   height: 450px;
   margin-left: 80px;
   margin-right: 80px
 }
 img.restaurant{
-  height: 350px;
+  height: 300px;
   width: 450px;
   margin-left: 90px;
   margin-top: 70px;
@@ -24,16 +23,24 @@ img.logo{
   height: 50px;
   padding-top: 50px;
 }
-p{
+.eventTitle{
   font-size: 14px;
-  margin-top: 2px;
   font-family: sans-serif;
-  margin-right: 90px
+  text-align: left;
+}
+
+div.eventTextBox{
+  height: 50px;
+  width: 440px
 
 }
-h3{
+h3.eventTitle{
   font-family: sans-serif;
   font-weight: bold;
+  text-align: left;
+  font-size: 16px;
+  margin-top: 0px;
+  text-align: justify
 }
 h5{
   font-family: sans-serif;
@@ -47,8 +54,8 @@ button.book{
    background-image: -ms-linear-gradient(top, #68D253, #28A80F);
    background-image: -o-linear-gradient(top, #68D253, #28A80F);
    background-image: linear-gradient(to bottom, #68D253, #28A80F);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#68D253, endColorstr=#28A80F);
-   /* margin-left: 0px; */
-   margin-top: 30px
+
+   margin-left: 0px
 }
 button.signup{
   border:1px solid #48BC31;-webkit-box-shadow: #B4B5B5 7px 7px 7px  ;-moz-box-shadow: #B4B5B5 7px 7px 7px ; box-shadow: #B4B5B5 7px 7px 7px  ; -webkit-border-radius: 10px; -moz-border-radius: 10px;border-radius: 10px;font-size:12px;font-family:helvetica, sans-serif; padding: 10px 10px 10px 10px; text-decoration:none; display:inline-block;text-shadow: 0px 0px 0 rgba(0,0,0,0.3);font-weight:bold; color: #FFFFFF;
@@ -71,26 +78,23 @@ button.home{
    background-image: linear-gradient(to bottom, #68D253, #28A80F);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#68D253, endColorstr=#28A80F);
   margin-left: 1000px;
 }
-div.eventInfo{
-  margin-top: 50px
-}
+
 div.detail{
   margin-top: 70px
 }
 div.eventText{
-  margin-top: 40px
+  margin-top: 20px
 }
 
 h5.event{
 
   font-size: 13px;
+  margin: 0
 
 }
-h3.eventTitle{
-  font-size: 16px;
-}
+
 p.eventText{
-  font-size: 15px;
-  margin-bottom: 1px;
-  margin-top: 2px;
+  font-size: 13px;
+  margin: 0;
+  text-align: justify;
 }

@@ -11,7 +11,6 @@ function App() {
     <div>
       <Header/>
       <Body/>
-
     </div>
   );
 }

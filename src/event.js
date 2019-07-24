@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import './event.css'
+import {Link} from 'react-router-dom'
 const axios = require('axios')
 // import rest1 from './image/rest1.jpg'
 // import DatePicker from "react-datepicker";
@@ -28,16 +29,21 @@ class Event extends Component{
   render(){
     return (
       <div className="event">
-        <button className="signup"type="button" name="button">Sign Up</button>
+        <Link to="/">
+        <button className="signup"type="button" name="button">HOME</button>
+        </Link>
         <div className="bodyEvent">
           <div className="imageRestaurant">
-            <h3>{this.state.event.title}</h3>
+
           <img  className="restaurant" src={this.state.event.image}alt="rest1"/>
             </div>
               <div className="detail">
 
                   <div className="eventText">
-            <p>{this.state.event.body}</p>
+                    <h3 className="eventTitle">{this.state.event.title}</h3>
+                      <div className="eventTextBox">
+                      <p className="eventText">{this.state.event.body}</p>
+                        </div>
 
                   </div>
             <div className="eventInfo">
