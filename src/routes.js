@@ -9,6 +9,7 @@ import CreateRestaurant from './createRestaurant'
 import Signup from './signup'
 import Login from './login'
 import Event from './event'
+import userProfile from './userProfile'
 import Restaurant from './restaurant'
 
 class Routes extends Component {
@@ -24,8 +25,9 @@ render() {
       <Switch>
         <Route path="/events/:id" component={Event} />
         <Route path="/restaurant/:id" component={Restaurant} />
-        <Route path ="/createEvent" component={CreateRestaurant} />
+        <Route path ="/createRestaurant" component={CreateRestaurant} />
         <Route path ="/signup" component={Signup} />
+        <Route path ="/userProfile" component={userProfile} />
         <Route path ="/login" component={Login} />
 
         <Route path ="/" component={App} />
