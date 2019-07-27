@@ -15,8 +15,9 @@ img.signup{
 
   background-image: url(image/head.jpg);
   background-size: cover;
-  height: 500px;
+  height: 600px;
   background-repeat: no-repeat;
+  border-radius: 0 0 65% 15% / 30% 5%
 
 
 }

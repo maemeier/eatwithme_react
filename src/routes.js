@@ -5,7 +5,7 @@ import App from './App'
 
 // import Event from './event'
 // import CreateEvent from './createEvent'
-import CreateRestaurant from './createRestaurant'
+import CreateEvents from './createEvents'
 import Signup from './signup'
 import Login from './login'
 import Event from './event'
@@ -25,7 +25,7 @@ render() {
       <Switch>
         <Route path="/events/:id" component={Event} />
         <Route path="/restaurant/:id" component={Restaurant} />
-        <Route path ="/createRestaurant" component={CreateRestaurant} />
+        <Route path ="/createEvents" component={CreateEvents} />
         <Route path ="/signup" component={Signup} />
         <Route path ="/userProfile" component={userProfile} />
         <Route path ="/login" component={Login} />

@@ -21,3 +21,7 @@ p.selectDate{
   color: black;
   font-size: 15px
 }
+div.eventForm{
+  margin-left: 150px;
+  margin-right: 150px;
+}
