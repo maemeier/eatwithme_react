@@ -9,6 +9,7 @@ class createRestaurant extends Component{
     address: '',
     tel: '',
     price: '',
+    file: null,
     restaurant: []
   }
 
@@ -28,11 +29,14 @@ e.preventDefault()
       body: this.state.body,
       address: this.state.address,
       tel: this.state.tel,
-      price: this.state.price
+      price: this.state.price,
+      file: this.state.file
     }
 
     console.log('restaurant', restaurant);
   }
+
+
 
 handleChange =(e)=>{
     this.setState({
@@ -48,7 +52,8 @@ handleChange =(e)=>{
       body: this.state.body,
       address: this.state.address,
       tel: this.state.tel,
-      price: this.state.price
+      price: this.state.price,
+      file: this.state.file,
     }
     console.log('stateeeeee', this.state);
     this.setState({
@@ -57,6 +62,7 @@ handleChange =(e)=>{
       address: '',
       tel: '',
       price: '',
+      file: ''
 
     })
     axios.post('http://localhost:4000/api/restaurant', restaurant,
@@ -80,7 +86,7 @@ handleChange =(e)=>{
     return(
       <div>
       <form>
-      <h1>Test</h1>
+      <div className="eventInput">
         <div className="form-group">
           <label htmlFor="formGroupExampleInput">Title</label>
           <input type="text"
@@ -131,9 +137,21 @@ handleChange =(e)=>{
               placeholder="Plese add your test" />
         </div>
 
+        <div className="form-group">
+          <label htmlFor="formGroupExampleInput">file</label>
+          <input type="file"
+            name='file'
+            value={this.state.file}
+            onChange={e => {this.handleChange(e)}}
+             className="form-control"
+              placeholder="Upload the file" />
+        </div>
+
 
         <button onClick={this.onSubmit}>Submit</button>
+        </div>
         </form>
+
       </div>
     )
   }
