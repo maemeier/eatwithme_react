@@ -4,6 +4,7 @@
   grid-template-columns:  1fr 1fr 1fr 1fr;
 
 }
+
 img.logo1{
   width: 40px;
   height: 40px;
@@ -43,7 +44,10 @@ p.recommend{
 }
 div.recommend{
 
-   margin: 0;
+background-color: blue;
+}
+div.eventBox1{
+  background-color: pink;
 }
 a:link{
   text-decoration: none;
@@ -96,6 +100,8 @@ h6.title{
 }
 .body{
   background-color: white;
+  display: grid;
+  grid-row: 1fr 1fr;
 
 }
 
@@ -118,18 +124,9 @@ img.rest1{
 .sponser{
   padding-left: 50px;
   padding-right: 50px;
-
   padding: 10px;
-
-
-
 }
-.wrapper{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
 
-
-}
 img.sponser{
   margin-top: 20px;
   /* max-width: 100%; */
@@ -148,7 +145,4 @@ span.restaurants{
 }
 p.restBold{
   font-weight: bold;
-}
-FontAwesomeIcon{
-  margin-left: 10px
 }

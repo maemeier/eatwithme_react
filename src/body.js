@@ -72,19 +72,12 @@ componentWillMount() {
 
 
   render(){
-   
+
     return (
 
       <div className="body">
 
-        <div className="content">
 
-          <h3>LOREM IPSUM DOLOR SIT AMET</h3>
-
-        </div>
-        <div className="recommend">
-          <p className="recommend">RECOMMENDED BY US </p>
-        </div>
            <div className="wrapper">
                  {
                    this.state.restaurant.map((c) => {
@@ -95,14 +88,17 @@ componentWillMount() {
                            <img className="sponser" src={c.image} alt="rest1"/>
                            </a>
                        <h6 className="title" >{c.title} </h6>
-                       <h6 className="city">{c.city}, {c.thailand} ({c.like})</h6>
+                       <h6 className="city">{c.city}, Thailand ({c.like})</h6>
                          </div>
                      )
                    })
                  }
           </div>
+          <div className="eventBox1">
 
-          <p className="recommend">NEW EVENT </p>
+
+
+          </div>
             <div className="wrapper">
                   {
                     this.state.event.map((c) => {
@@ -112,7 +108,7 @@ componentWillMount() {
                             <a href={`/events/${c._id}`}>
                             <img className="sponser" src={c.image} alt="rest1"/>
                             </a>
-                            <h6 className="title" >{c.title} <Likes all={c} likes={c.likes} key={c._id} /> </h6>
+                            <h6 className="title" >{c.title} <span><Likes all={c} likes={c.likes} key={c._id} /> </span></h6>
                             <h6 className="city">{c.city}, Thailand</h6>
 
                           </div>

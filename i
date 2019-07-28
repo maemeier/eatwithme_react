@@ -1,118 +1,134 @@
+import React, {Component} from 'react'
+import './body.css'
+
+import axios from 'axios';
+
+import Likes from './likes'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faHeart } from '@fortawesome/free-solid-svg-icons'
+
+class Body extends Component{
 state = {
-  title: '',
-  body: '',
-  address: '',
-  tel: '',
-  price: '',
-  test:''
+  event: ["mae"],
+  restaurant: ["mae"],
+
+  count: 0,
+
+
 }
-handleChangeTest =(e)=>{
-this.setState({
-  test:e.target.value
-})
-console.log(this.state.test);
-}
-createRestaurant = (e) => {
-  e.preventDefault();
-}
+
+//functions
+
+// increment = () => {
+//     this.setState(prevState => {
+//        return {count: prevState.count + 1}
+//     }, ()=>{
+// 			axios.patch(`http://localhost:4000/api/getEvent/${this.state.event._id}`,{likes: this.state.count}).then((res)=> {
+//         console.log('like');
+// 			}).catch((err)=> {
+// 				console.log('err', err);
+// 			})
+// 		})
+// }
+
+// increment = () =>{
+//   this.setState(prevState => {
+//     return {count: prevState.count + 1}
+//   }, ()=> {
+//     axois.patch(`http://localhost:4000/api/getEvent`, {likes: this.state.count}).then((res)=>{
+//
+//     }).catch((err)=>{
+//
+//     })
+//   }
+//   })
+//   	axios.get('http://localhost:4000/api/getEvent').then((res)=>{
+//       console.log('count',res.data);
+//   let newCount = this.state.count + 1
+//   this.setState ({
+//     count: newCount
+//   })
+// })
+// }
 
 componentWillMount() {
-  axios.post('http://localhost:4000/api/restaurant')
-}
+  		axios.get('http://localhost:4000/api/getEvent').then((res)=>{
+        console.log('rrrr',res.data);
+        this.setState({event: res.data})
+        this.setState({count:res.data.likes})
 
-changeInput = (e, x) => {
-  this.setState({
-    x: e.target.value
-  })
-}
+        console.log(this.state.event[0].title)
+        console.log(this.state.event[0].city)
+      })
+      axios.get('http://localhost:4000/api/getRestaurant').then((res)=>{
+        console.log(res.data);
+        this.setState({restaurant: res.data})
 
-onChange =(e, x) =>{
-  console.log('Helloooo');
-  this.setState ({
-    x: e.target.value
-  })
-}
-// addFile = (e) => {
-// 		this.setState({
-// 			image: e.target.images[0]
-// 		})
-// 	}
+        console.log(this.state.restaurant[0].title)
+        console.log(this.state.restaurant[0].city)
+      })
 
-print =(e)=>{
-console.log();
-}
-
-render(){
-  return (
-    <div >
-      <div className="eventInput">
-          <img className="logoCreateEvent" src={Logo} alt="logo" />
+  	}
 
 
-        <form onSubmit={this.createRestaurant}>
-          <h1>Test</h1>
-            <div className="form-group">
-              <label htmlFor="formGroupExampleInput">Test</label>
-              <input type="text"
-                value={this.state.test}
-                onChange={this.handleChangeTest}
-                 className="form-control"
-                  placeholder="Plese add your test" />
-            </div>
-          <div className="form-group">
-            <label htmlFor="formGroupExampleInput">Title</label>
-            <input type="text"
-              className="form-control"
-              placeholder="Plese add your title" value={this.state.title} onChange={(e) => this.changeInput(e, 'title')}/>
+  render(){
+
+    return (
+
+      <div className="body">
+
+        <div className="content">
+
+          <h3>LOREM IPSUM DOLOR SIT AMET</h3>
+            <p className="recommend">RECOMMENDED BY US </p>
+
+        </div>
+
+           <div className="wrapper">
+                 {
+                   this.state.restaurant.map((c) => {
+
+                     return(
+                         <div className="restaurantBox">
+                           <a href={`/restaurant/${c._id}`}>
+                           <img className="sponser" src={c.image} alt="rest1"/>
+                           </a>
+                       <h6 className="title" >{c.title} </h6>
+                       <h6 className="city">{c.city}, Thailand ({c.like})</h6>
+                         </div>
+                     )
+                   })
+                 }
           </div>
 
-          <div className="form-group">
-            <label htmlFor="formGroupExampleInput2">Description</label>
-            <input type="text" className="form-control" id="formGroupExampleInput2" placeholder="Please type here" value={this.state.body} onChange={(e) => this.changeInput(e, 'body')}/>
-          </div>
+          <p className="recommend">NEW EVENT </p>
 
-          <div className="form-group">
-            <label htmlFor="formGroupExampleInput2">Address: </label>
-            <input type="text" className="form-control" id="formGroupExampleInput2" placeholder=" number only" value={this.state.address} onChange={(e) => this.changeInput(e, 'address')}/>
-          </div>
+            <div className="wrapper2">
+                  {
+                    this.state.event.map((c) => {
 
-          <div className="form-group">
-            <label htmlFor="formGroupExampleInput2">Tel: </label>
-            <input type="text" className="form-control" id="formGroupExampleInput2" placeholder=" number only"value={this.state.tel} onChange={(e) => this.changeInput(e, 'tel')}/>
-          </div>
+                      return(
+                          <div>
+                            <a href={`/events/${c._id}`}>
+                            <img className="sponser" src={c.image} alt="rest1"/>
+                            </a>
+                            <h6 className="title" >{c.title} <Likes all={c} likes={c.likes} key={c._id} /> </h6>
+                            <h6 className="city">{c.city}, Thailand</h6>
 
-          <div className="form-group">
-            <label htmlFor="formGroupExampleInput2">Price: </label>
-            <input type="text" className="form-control" id="formGroupExampleInput2" placeholder=" number only"value={this.state.price} onChange={(e) => this.changeInput(e, 'price')}/>
-          </div>
-
-          <div className="input-group">
-  <div className="custom-file">
-    <input type="file" className="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" />
-    <label className="custom-file-label" htmlFor="inputGroupFile04">Choose file</label>
-  </div>
-  <div className="input-group-append">
-    <button className="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Button</button>
-  </div>
-</div>
-
-
-<button type="submit" >SUBMIT EVENT</button>
-<button className="cancleEvent">CANCEL EVENT</button>
-          </form>
+                          </div>
+                      )
+                    })
+                  }
+           </div>
 
 
 
+      </div>
 
-
-
-
-    <div className="createRestaurantFooter">
-
-
-    </div>
-  </div>
-</div>
-  );
+    );
+  }
 }
-}
+
+
+
+export default Body

@@ -27,6 +27,7 @@ class Event extends Component{
   }
 
   render(){
+    
     return (
       <div className="event">
         <Link to="/">
@@ -50,9 +51,9 @@ class Event extends Component{
             <h5 className="event">Date: {this.state.event.date} </h5>
             <h5 className="event">Time: {this.state.event.time}</h5>
             <h5 className="event">Max {this.state.event.person} Person / 4 Avaliable</h5>
-            <Link to="/signup">
+
             <button className="book"type="button" name="button">BOOK THIS EVENT</button>
-            </Link>
+
             </div>
           </div>
           </div>
