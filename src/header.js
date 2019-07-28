@@ -28,7 +28,7 @@ class Header extends Component{
         <h5>sunt in culpa qui officia deserunt mollit anim id est laborum.</h5>
 
         <Link to="/createRestaurant">
-        <button>CREATE RESTAURANT</button>
+        <button className="createEvents"> CREATE RESTAURANT</button>
         </Link>
         <br />
         <div className="iconHeader">

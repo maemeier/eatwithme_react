@@ -72,7 +72,7 @@ componentWillMount() {
 
 
   render(){
-  
+   
     return (
 
       <div className="body">
