@@ -30,8 +30,9 @@ img.logo{
 }
 
 div.eventTextBox{
-  height: 50px;
-  width: 440px
+  height: 100px;
+  width: 440px;
+  overflow: scroll;
 
 }
 h3.eventTitle{
@@ -54,7 +55,6 @@ button.book{
    background-image: -ms-linear-gradient(top, #68D253, #28A80F);
    background-image: -o-linear-gradient(top, #68D253, #28A80F);
    background-image: linear-gradient(to bottom, #68D253, #28A80F);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#68D253, endColorstr=#28A80F);
-
    margin-left: 0px
 }
 button.signup{
@@ -98,4 +98,11 @@ p.eventText{
   font-size: 13px;
   margin: 0;
   text-align: justify;
+
+}
+.eventInfo{
+  margin-top: 10px
+}
+.eventText{
+  height: 90px
 }

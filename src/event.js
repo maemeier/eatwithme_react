@@ -2,32 +2,26 @@ import React, {Component} from 'react'
 import './event.css'
 import {Link} from 'react-router-dom'
 const axios = require('axios')
-// import rest1 from './image/rest1.jpg'
-// import DatePicker from "react-datepicker";
-
-// import "react-datepicker/dist/react-datepicker.css";
-// import DayPicker from 'react-day-picker';
-// import 'react-day-picker/lib/style.css';
-
-
 
 
 class Event extends Component{
 
   state ={
-    id: this.props.match.params.id,
-    event: {}
+    id: this.props.id,
+    event: {},
+
+    count: 0,
   }
 
   componentWillMount() {
-    axios.get(`http://localhost:4000/api/getanEvent/${this.props.match.params.id}`).then((event) => {
+    axios.get(`http://localhost:4000/api/getanEvent/${this.props.id}`).then((event) => {
       console.log('event', event)
       this.setState({event: event.data})
     })
   }
 
   render(){
-    
+
     return (
       <div className="event">
         <Link to="/">

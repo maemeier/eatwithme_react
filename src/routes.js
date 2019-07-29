@@ -9,7 +9,7 @@ import CreateRestaurant from './createRestaurant'
 import Signup from './signup'
 import Login from './login'
 import Event from './event'
-import userProfile from './userProfile'
+import UserProfile from './userProfile'
 import Restaurant from './restaurant'
 
 class Routes extends Component {
@@ -41,8 +41,12 @@ auth = () => {
   })
 }
 
+renderEvent=()=> {
+
+}
+
 renderRedirect=()=> {
-  alert('moody dragon bedtime story was really good! but you need to sign up to use this service')
+  alert('Please sign up or log in before booking the event')
   return <Redirect to='/signup' />
 }
 
@@ -56,10 +60,10 @@ render() {
 
         <Route path="/restaurant/:id" component={Restaurant} />
         <Route path ="/createRestaurant" component={CreateRestaurant} />
-        <Route path ="/userProfile" component={userProfile} />
+        <Route path ="/userProfile" component={UserProfile} />
         <Route path ="/login" component={() => <Login auth={this.auth} />} />
-        <Route path="/events/:id" render={() => (
-            this.checkAuth() ? (<Event />) :  this.renderRedirect()
+        <Route path="/events/:id" render={(props) => (
+            this.checkAuth() ? (<Event id={props.match.params.id} />) :  this.renderRedirect()
           )} />
         <Route path ="/signup" component={() => <Signup auth={this.auth} />} />
         <Route path ="/" component={App} />

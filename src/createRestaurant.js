@@ -46,14 +46,18 @@ handleChange =(e)=>{
 
 
   onSubmit =(e)=>{
+
+    // Form Data
+
+
+    
     e.preventDefault()
     let restaurant = {
       title: this.state.title,
       body: this.state.body,
       address: this.state.address,
       tel: this.state.tel,
-      price: this.state.price,
-      file: this.state.file,
+      price: this.state.price
     }
     console.log('stateeeeee', this.state);
     this.setState({
