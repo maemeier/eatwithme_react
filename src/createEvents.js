@@ -189,7 +189,7 @@ class createEvents extends Component {
           <div className="form-group">
             <label htmlFor="formGroupExampleInput">Image</label>
             <input
-              type="text"
+              type="file"
               name="image"
               value={this.state.image}
               onChange={e => {
