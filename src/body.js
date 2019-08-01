@@ -66,6 +66,7 @@ class Body extends Component {
       console.log(this.state.restaurant[0].city);
     });
   }
+  // createRestaurant function
 
   render() {
     return (
@@ -91,7 +92,7 @@ class Body extends Component {
             return (
               <div>
                 <a href={`/events/${c._id}`}>
-                  <img className="sponser" src={c.image} alt="rest1" />
+                  <img className="sponser" src={c.file} alt="rest1" />
                 </a>
                 <h6 className="title">
                   {c.title}{" "}

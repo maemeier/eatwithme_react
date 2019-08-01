@@ -48,7 +48,8 @@ class createRestaurant extends Component {
       body: this.state.body,
       address: this.state.address,
       tel: this.state.tel,
-      price: this.state.price
+      price: this.state.price,
+      file: this.state.file
     };
     console.log("stateeeeee", this.state);
     this.setState({

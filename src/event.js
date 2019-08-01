@@ -39,7 +39,7 @@ class Event extends Component {
           <div className="imageRestaurant">
             <img
               className="restaurant"
-              src={this.state.event.image}
+              src={this.state.event.file}
               alt="rest1"
             />
           </div>
@@ -51,7 +51,7 @@ class Event extends Component {
               </div>
             </div>
             <div className="eventInfo">
-              <h5 className="event">Date: {this.state.event.date} </h5>
+              <h5 className="event">Date: {this.state.event.datetime} </h5>
               <h5 className="event">Time: {this.state.event.time}</h5>
               <h5 className="event">
                 Max {this.state.event.person} Person / 4 Avaliable

@@ -11,7 +11,7 @@ class createEvents extends Component {
     date: "",
     time: "",
     person: "",
-    image: "",
+    file: "",
     event: []
   };
 
@@ -31,7 +31,7 @@ class createEvents extends Component {
       date: this.state.date,
       time: this.state.time,
       number: this.state.number,
-      image: this.state.image
+      file: this.state.file
     };
 
     console.log("event", event);
@@ -53,7 +53,7 @@ class createEvents extends Component {
       date: this.state.date,
       time: this.state.time,
       number: this.state.number,
-      image: this.state.image
+      file: this.state.file
     };
     console.log("stateeeeee", this.state);
     this.setState({
@@ -64,7 +64,7 @@ class createEvents extends Component {
       date: "",
       time: "",
       number: "",
-      image: ""
+      file: ""
     });
     axios
       .post("http://localhost:4000/api/event", event, {
@@ -190,8 +190,8 @@ class createEvents extends Component {
             <label htmlFor="formGroupExampleInput">Image</label>
             <input
               type="file"
-              name="image"
-              value={this.state.image}
+              name="file"
+              value={this.state.file}
               onChange={e => {
                 this.handleChange(e);
               }}
