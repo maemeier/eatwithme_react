@@ -13,9 +13,11 @@ class createEvents extends Component {
     time: "",
     person: "",
     file: "",
-		events: []
+		events: [],
 
   };
+
+
 
 	componentDidMount(){
 			axios.get("http://localhost:4000/api/getEvent").then((res)=>{
@@ -33,16 +35,6 @@ class createEvents extends Component {
   createEvent = e => {
     e.preventDefault();
     console.log("state", this.state);
-		// let file_holder = new FormData()
-		// file_holder.append('file', this.state.file)
-		// file_holder.append('title', this.state.title)
-		// file_holder.append('body', this.state.body)
-		// file_holder.append('city', this.state.city)
-		// file_holder.append('country', this.state.country)
-		// file_holder.append('date', this.state.date)
-		// file_holder.append('time', this.state.time)
-		// file_holder.append('person', this.state.person)
-
     let form = new FormData();
     form.append("title", this.state.title);
     form.append("body", this.state.body);
@@ -82,8 +74,12 @@ class createEvents extends Component {
     });
   };
 
+
+
+
   render() {
     return (
+
       <div className="eventsForm">
         <Nav />
 

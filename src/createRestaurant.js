@@ -10,8 +10,24 @@ class createRestaurant extends Component {
     address: "",
     tel: "",
     price: "",
-    file: ""
+    file: "",
+    restaurants: []
   };
+
+  componentDidMount() {
+    axios
+      .get("http://localhost:4000/api/getRestaurant")
+      .then(res => {
+        console.log("res data", res.data);
+        this.setState({
+          restaurants: res.data
+        });
+        console.log("restaurant", this.state);
+      })
+      .catch(err => {
+        console.log("err axois getRestaurant", err);
+      });
+  }
 
   createRestaurant = e => {
     e.preventDefault();
@@ -31,10 +47,13 @@ class createRestaurant extends Component {
         }
       })
       .then(res => {
+        let restaurant = this.state.restaurants;
+        restaurant.push(res.data);
+        this.setState({ restaurant });
         window.location = "/";
       })
       .catch(err => {
-        console.log("error>>>>>>", err);
+        console.log("error restaurant", err);
       });
   };
 
@@ -54,7 +73,11 @@ class createRestaurant extends Component {
     return (
       <div>
         <Nav />
-        <form onSubmit={this.createRestaurant}>
+        <form
+          onSubmit={e => {
+            this.createRestaurant(e);
+          }}
+        >
           <div className="eventInput">
             <div className="form-group">
               <label htmlFor="formGroupExampleInput">Title</label>
@@ -131,7 +154,6 @@ class createRestaurant extends Component {
               <input
                 type="file"
                 name="file"
-                value={this.state.file}
                 onChange={e => {
                   this.handleFile(e);
                 }}
@@ -140,7 +162,7 @@ class createRestaurant extends Component {
               />
             </div>
 
-            <button>Submit</button>
+            <button type="submit">Submit</button>
           </div>
         </form>
       </div>

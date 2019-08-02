@@ -1,66 +1,83 @@
-import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import axios from 'axios'
-import './App.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHeart } from '@fortawesome/free-solid-svg-icons'
-​
-​
-class Video extends Component {
-	state = {
-		video: this.props.video
-	}
-​
-​
-//functions
-//to add likes see note on addLike_note.js
-​
-	incrementLikes = () => {
- 	 console.log("Give me some loves")
-	 axios
-		 .patch(`http://localhost:4000/api/videos/${this.state.video._id}`, {likes: this.state.video.likes + 1})
-		 .then(res => {
-			 this.setState({
-				 video: res.data
-			 });
-			 console.log('res.data from axios ', res.data);
-		 })
-		 .catch(err => {
-			 console.log('err', err);
-		 });
+import React, { Component } from "react";
+import "./body.css";
+
+import axios from "axios";
+
+import Likes from "./likes";
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faHeart } from '@fortawesome/free-solid-svg-icons'
+
+class Body extends Component {
+  state = {
+    event: ["mae"],
+    restaurant: ["mae"],
+
+    count: 0
+  };
+
+  componentWillMount() {
+    axios.get("http://localhost:4000/api/getEvent").then(res => {
+      console.log("rrrr", res.data);
+      this.setState({ event: res.data });
+      this.setState({ count: res.data.likes });
+
+      console.log(this.state.event[0].title);
+      console.log(this.state.event[0].city);
+    });
+    axios.get("http://localhost:4000/api/getRestaurant").then(res => {
+      console.log(res.data);
+      this.setState({ restaurant: res.data });
+
+      console.log(this.state.restaurant[0].title);
+      console.log(this.state.restaurant[0].city);
+    });
   }
-​
-​
-	//Render
-	render() {
-		return (
-			<div className="card-columns d-flex  m-2">
-				<div className="card mt-2 bg-light">
-							<iframe
-								className="w-100 p-1" width="150"
-								src={`https://www.youtube.com/embed/${this.state.video.link}`}
-								frameBorder="0"
-								allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-								allowsfullscreen="true"
-							/>
-							<div className="card-body">
-								<h5 className="card-title">{this.state.video.category.name}</h5>
-								<p className="card-text">{this.state.video.description}</p>
-​
-						   {/*add FontAwesomeIcon*/}
-				         <FontAwesomeIcon
-							  icon={ faHeart }
-								 onClick={ this.incrementLikes }
-							  style={{ color: "#84d9ff"}}
-				        />
-							{/*display number and update when increased */}
-							   <span>{this.state.video.likes}</span>
-​
-				  </div>
-			</div>
-		</div>
-		);
-	}
+  // createRestaurant function
+
+  render() {
+    return (
+      <div className="body">
+        <div className="wrapper">
+          {this.state.restaurant.map(c => {
+            return (
+              <div className="restaurantBox">
+                <a href={`/restaurant/${c._id}`}>
+                  <img className="sponser" src={c.image} alt="rest1" />
+                </a>
+                <h6 className="title">{c.title} </h6>
+                <h6 className="city">
+                  {c.city}, Thailand ({c.like})
+                </h6>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="eventBox1"></div>
+
+        <div className="wrapper">
+          {this.state.event.map(c => {
+            return (
+              <div>
+                <a href={`/events/${c._id}`}>
+                  <img className="sponser" src={c.file} alt="rest1" />
+                </a>
+                <h6 className="title">
+                  {c.title}{" "}
+                  <span>
+                    <Likes all={c} likes={c.likes} key={c._id} />{" "}
+                  </span>
+                </h6>
+                <h6 className="city">
+                  {c.city}, {c.country}
+                </h6>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    );
+  }
 }
-​
-export default Video;
+
+export default Body;

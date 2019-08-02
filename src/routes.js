@@ -11,6 +11,7 @@ import Login from "./login";
 import Event from "./event";
 import UserProfile from "./userProfile";
 import Restaurant from "./restaurant";
+import AllRestaurants from "./allRestaurants";
 
 class Routes extends Component {
   //state
@@ -34,7 +35,7 @@ class Routes extends Component {
         loggedIn: true
       },
       () => {
-        window.location.href = "/app";
+        window.location.href = "/userProfile";
       }
     );
   };
@@ -53,6 +54,7 @@ class Routes extends Component {
         <Switch>
           <Route path="/restaurant/:id" component={Restaurant} />
           <Route path="/createEvents" component={CreateEvents} />
+          <Route path="/allRestaurants" component={AllRestaurants} />
           <Route path="/createRestaurant" component={CreateRestaurant} />
           <Route path="/userProfile" component={UserProfile} />
           <Route path="/login" component={() => <Login auth={this.auth} />} />

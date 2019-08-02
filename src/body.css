@@ -15,6 +15,40 @@ img.logo1 {
   width: 300px;
   height: 200px;
 }
+.allRestaurantsText {
+  font-size: 16px;
+  text-align: left;
+  margin-left: 100px;
+  margin-top: 100px;
+}
+div.body1 {
+  margin-left: 90px;
+  margin-right: 90px;
+  height: 300px;
+}
+.bodyTitle {
+  text-align: center;
+  margin-top: 70px;
+  margin-bottom: 20px;
+  color: #333333;
+}
+.bodyTextAds {
+  color: #333333;
+  font-weight: normal;
+  font-size: 13px;
+}
+.boxAds {
+  width: 320px;
+  height: 60px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+.bodyText {
+  font-size: 16px;
+  text-align: left;
+  margin-left: 100px;
+  color: #333333;
+}
 
 button {
   border: 1px solid #48bc31;
@@ -114,10 +148,11 @@ h6.city {
   color: #333333;
   font-size: 13px;
 }
-.body {
+div.body {
   background-color: white;
   display: grid;
   grid-row: 1fr 1fr;
+  margin-top: 0px;
 }
 
 img.logo {

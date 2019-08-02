@@ -7,7 +7,10 @@ const axios = require("axios");
 class UserProfile extends Component {
   state = {
     id: this.props.match.params.id,
-    user: {}
+    user: {},
+
+    idEvent: this.props.match.params.id,
+    event: {}
   };
 
   componentWillMount() {
@@ -22,6 +25,23 @@ class UserProfile extends Component {
         this.setState({ user: user.data });
         console.log("userdata", user.data);
       });
+    axios
+      .get(`http://localhost:4000/api/getanEvent`, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`
+        }
+      })
+      .then(event => {
+        console.log("get Event", event);
+        this.setState({ event: event.data });
+        console.log("userdata", event.data);
+      });
+  }
+
+  logout() {
+    localStorage.clear();
+    alert("You are leaving us!, We hope to see you soon 🥺 ");
+    window.location.href = "/";
   }
 
   render() {
@@ -38,12 +58,14 @@ class UserProfile extends Component {
 
           <div className="eventList">
             <div className="userEvent">
-              <h5 className="profileName">Date: 10.08.2019</h5>{" "}
+              <h5 className="profileName">Date:{this.state.event.datetime}</h5>
               <span>
-                <h5 className="profileName">Event: CREPE TIME</h5>
+                <h5 className="profileName">Event: {this.state.event.id}</h5>
               </span>
             </div>
-            <button className="deleteEvent">DELETE</button>
+            <button className="deleteEvent" onClick={this.logout}>
+              SIGN OUT
+            </button>
           </div>
         </div>
       </div>

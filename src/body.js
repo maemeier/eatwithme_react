@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./body.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import axios from "axios";
 
@@ -14,40 +15,6 @@ class Body extends Component {
 
     count: 0
   };
-
-  //functions
-
-  // increment = () => {
-  //     this.setState(prevState => {
-  //        return {count: prevState.count + 1}
-  //     }, ()=>{
-  // 			axios.patch(`http://localhost:4000/api/getEvent/${this.state.event._id}`,{likes: this.state.count}).then((res)=> {
-  //         console.log('like');
-  // 			}).catch((err)=> {
-  // 				console.log('err', err);
-  // 			})
-  // 		})
-  // }
-
-  // increment = () =>{
-  //   this.setState(prevState => {
-  //     return {count: prevState.count + 1}
-  //   }, ()=> {
-  //     axois.patch(`http://localhost:4000/api/getEvent`, {likes: this.state.count}).then((res)=>{
-  //
-  //     }).catch((err)=>{
-  //
-  //     })
-  //   }
-  //   })
-  //   	axios.get('http://localhost:4000/api/getEvent').then((res)=>{
-  //       console.log('count',res.data);
-  //   let newCount = this.state.count + 1
-  //   this.setState ({
-  //     count: newCount
-  //   })
-  // })
-  // }
 
   componentWillMount() {
     axios.get("http://localhost:4000/api/getEvent").then(res => {
@@ -67,47 +34,68 @@ class Body extends Component {
     });
   }
   // createRestaurant function
-
   render() {
     return (
-      <div className="body">
-        <div className="wrapper">
-          {this.state.restaurant.map(c => {
-            return (
-              <div className="restaurantBox">
-                <a href={`/restaurant/${c._id}`}>
-                  <img className="sponser" src={c.image} alt="rest1" />
-                </a>
-                <h6 className="title">{c.title} </h6>
-                <h6 className="city">
-                  {c.city}, Thailand ({c.like})
-                </h6>
-              </div>
-            );
-          })}
+      <div>
+        <h2 className="bodyTitle">You Will Never Eat Alone</h2>
+        <div className="boxAds">
+          <p className="bodyTextAds">
+            Discover the unique social media dining app that set up you to eat
+            with strangers. Create your events and join breakfast, lunch or
+            dinner with local people.
+          </p>
+        </div>
+        <div>
+          <h3 className="bodyText">
+            {" "}
+            <span class="badge badge-dark">Recommend Restaurant </span>
+          </h3>
+          <div className="body1">
+            <div className="wrapper">
+              {this.state.restaurant.slice(0, 4).map(c => {
+                return (
+                  <div>
+                    <a href={`/restaurant/${c._id}`}>
+                      <img className="sponser" src={c.image} alt="rest1" />
+                    </a>
+                    <h6 className="title">{c.title} </h6>
+                    <h6 className="city">
+                      {c.city}, Thailand ({c.like})
+                    </h6>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
 
-        <div className="eventBox1"></div>
-
-        <div className="wrapper">
-          {this.state.event.map(c => {
-            return (
-              <div>
-                <a href={`/events/${c._id}`}>
-                  <img className="sponser" src={c.file} alt="rest1" />
-                </a>
-                <h6 className="title">
-                  {c.title}{" "}
-                  <span>
-                    <Likes all={c} likes={c.likes} key={c._id} />{" "}
-                  </span>
-                </h6>
-                <h6 className="city">
-                  {c.city}, {c.country}
-                </h6>
-              </div>
-            );
-          })}
+        <div>
+          <h3 className="bodyText">
+            {" "}
+            <span class="badge badge-dark"> Events </span>
+          </h3>
+          <div className="body">
+            <div className="wrapper">
+              {this.state.event.map(c => {
+                return (
+                  <div>
+                    <a href={`/events/${c._id}`}>
+                      <img className="sponser" src={c.file} alt="rest1" />
+                    </a>
+                    <h6 className="title">
+                      {c.title}{" "}
+                      <span>
+                        <Likes all={c} likes={c.likes} key={c._id} />{" "}
+                      </span>
+                    </h6>
+                    <h6 className="city">
+                      {c.city}, {c.country}
+                    </h6>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </div>
     );

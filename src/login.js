@@ -3,6 +3,7 @@ import "./login.css";
 import axios from "axios";
 import Nav from "./nav";
 import logo from "./image/logoeat.png";
+import { Link } from "react-router-dom";
 
 class Login extends Component {
   state = {
@@ -72,6 +73,9 @@ class Login extends Component {
                   <button type="submit" className="btn btn-success">
                     Login
                   </button>
+                  <p>
+                    Need an account? <Link to="/signup"> Sign up</Link>
+                  </p>
                 </form>
               </div>
             </div>

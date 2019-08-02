@@ -12,6 +12,11 @@ class Event extends Component {
     count: 0
   };
 
+	bookedEvent(){
+		const {guests} = this.state;
+		return guests === 0? "Full": guests;
+	}
+
   componentWillMount() {
     axios
       .get(`http://localhost:4000/api/getanEvent/${this.props.id}`)
@@ -43,17 +48,7 @@ class Event extends Component {
         console.log("err", err);
       });
   };
-  // decrement = book => {
-  //   this.setState({ count: this.state.count - 1 });
-  // };
 
-  // book = () => {
-  //   axios.patch(`http://localhost:4000/api/events/${this.props.id}`, "", {
-  //     headers: {
-  //       Authorization: `Bearer ${localStorage.getItem("token")}`
-  //     }
-  //   });
-  // };
 
   render() {
     return (
@@ -77,6 +72,7 @@ class Event extends Component {
                 {this.state.event.person - this.state.event.guests.length}{" "}
                 Avaliable{" "}
               </h5>
+							<span>Staus{this.bookedEvent()}</span>
             </div>
             <div className="eventInfo">
               <div className="eventTextBox">
@@ -90,7 +86,7 @@ class Event extends Component {
                 onClick={() => this.book()}
               >
                 BOOK THIS EVENT
-								
+
               </button>
             </div>
           </div>
