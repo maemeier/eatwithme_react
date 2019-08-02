@@ -17,17 +17,13 @@ class Header extends Component {
     return (
       <div className="nav">
         <ul>
-          <Link to="/">
+          <Link to="/" style={{ textDecoration: "none" }}>
             <li>Home</li>
           </Link>
-          <Link to="/createRestaurant">
+          <Link to="/allRestaurants" style={{ textDecoration: "none" }}>
             <li>Restaurant</li>
           </Link>
           {this.checkAuth() ? <Logout /> : <Loginbutton />}
-
-          <Link to="/allRestaurants">
-            <li>All</li>
-          </Link>
         </ul>
       </div>
     );

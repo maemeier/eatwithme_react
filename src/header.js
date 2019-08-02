@@ -11,12 +11,7 @@ class Header extends Component {
   render() {
     return (
       <div className="header">
-        <div className="logoAndButton">
-          <img className="logo" src={logo} alt="logo" />
-          <Link to="/userProfile">
-            <img className="signup" src={signup} alt="signup" />
-          </Link>
-        </div>
+        <div className="logoAndButton"></div>
 
         <h1 className="TitleHeader">EAT WITH ME</h1>
         <div className="headerText">
