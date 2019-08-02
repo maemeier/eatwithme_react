@@ -1,48 +1,49 @@
-img.logo1{
+img.logo1 {
   width: 40px;
   height: 40px;
   margin-top: 20px;
   margin-left: 60px;
 }
-img.signup{
+img.signup {
   width: 30px;
   height: 30px;
   margin-top: 40px;
   margin-left: 500px;
 }
-.header{
-  background-color: #F7F7F7;
+.header {
+  background-color: #f7f7f7;
 
   background-image: url(image/head.jpg);
   background-size: cover;
   height: 600px;
   background-repeat: no-repeat;
-  
-
-
 }
-.iconHeader{
+.headerText {
+  width: 500px;
+  height: 130px;
+}
+.iconHeader {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 
-  width: 350px
+  width: 350px;
 }
-.food1{
+.food1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 10px;
 }
-p.food{
+p.food {
   color: white;
   font-family: sans-serif;
   margin-top: 50px;
-  margin-left: 8px
+  margin-left: 8px;
 }
-.logoAndButton{
+.logoAndButton {
   display: grid;
   grid-template-columns: 1fr 1fr;
 
-  height: 60px
+  height: 60px;
 }
 /* img.signup{
   height: 30px;
@@ -51,38 +52,39 @@ p.food{
   margin-top: 40px
 
 } */
-button.createEvents{
+button.createEvents {
   box-shadow: none !important;
-   background-image: -webkit-linear-gradient(top, #68D253, #28A80F);
-   background-image: -moz-linear-gradient(top, #68D253, #28A80F);
-   background-image: -ms-linear-gradient(top, #68D253, #28A80F);
-   background-image: -o-linear-gradient(top, #68D253, #28A80F);
-   background-image: linear-gradient(to bottom, #68D253, #28A80F);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#68D253, endColorstr=#28A80F);
-   margin-left: 60px;
-   margin-top: 30px
+  background-image: -webkit-linear-gradient(top, #68d253, #28a80f);
+  background-image: -moz-linear-gradient(top, #68d253, #28a80f);
+  background-image: -ms-linear-gradient(top, #68d253, #28a80f);
+  background-image: -o-linear-gradient(top, #68d253, #28a80f);
+  background-image: linear-gradient(to bottom, #68d253, #28a80f);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#68D253, endColorstr=#28A80F);
+  margin-left: 60px;
+  margin-top: 30px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-family: sans-serif;
 }
-h1 {
+h1.TitleHeader {
   font-family: sans-serif;
   margin-top: 90px;
   margin-left: 60px;
-  color: white;
-
+  color: #333333;
 }
-span.food{
+span.food {
   margin-left: 10px;
   font-family: sans-serif;
   color: white;
   font-size: 12px;
   margin-top: 20px;
-
 }
-h3{
+h3 {
   text-align: center;
   font-family: sans-serif;
   margin-top: 60px;
-
 }
-p{
+p {
   text-align: center;
   font-family: sans-serif;
   font-size: 13px;
@@ -90,16 +92,16 @@ p{
   margin-top: 2px;
   color: white;
   font-weight: lighter;
-
 }
-h5{
+h5.headerText1 {
   font-family: sans-serif;
   margin: 3px 60px 0px 60px;
   font-weight: lighter;
-  font-size: 15px;
+  font-size: 14px;
   color: white;
+  text-align: justify;
 }
-h6{
+h6 {
   font-family: sans-serif;
   font-weight: lighter;
   font-size: 14px;
@@ -107,41 +109,38 @@ h6{
   margin-bottom: 2px;
   margin-left: 10px;
 }
-h6.title{
+h6.title {
   font-weight: bold;
   color: white;
 }
-.body{
+.body {
   background-color: white;
 }
 
-img.logo{
+img.logo {
   height: 40px;
   width: 40px;
   margin-top: 40px;
   margin-right: 90px;
   margin-left: 60px;
-  margin-right: 7px
-
+  margin-right: 7px;
 }
-img.ham{
+img.ham {
   height: 800px;
   width: 800px;
-  margin-top: 20px
+  margin-top: 20px;
 }
-img.food{
+img.food {
   height: 40px;
   width: 40px;
   margin-left: 60px;
   margin-top: 30px;
-  border-radius: 10px
+  border-radius: 10px;
 }
 
-.wrapper{
-
+.wrapper {
   height: 300px;
-
 }
-img.sponser{
-  border-radius: 10px
+img.sponser {
+  border-radius: 10px;
 }

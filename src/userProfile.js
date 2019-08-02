@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./userProfile.css";
-import { Link } from "react-router-dom";
+import Nav from "./nav";
+
 const axios = require("axios");
 
 class UserProfile extends Component {
@@ -26,9 +27,7 @@ class UserProfile extends Component {
   render() {
     return (
       <div>
-        <Link to="/">
-          <button className="userHome"> Home</button>
-        </Link>
+        <Nav />
         <div className="userProfile">
           <div className="profile">
             <h1 className="profileTitle">Profile</h1>

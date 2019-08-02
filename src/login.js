@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./login.css";
 import axios from "axios";
+import Nav from "./nav";
 import logo from "./image/logoeat.png";
 
 class Login extends Component {
@@ -41,35 +42,38 @@ class Login extends Component {
 
   render() {
     return (
-      <div className="row">
-        <div className="col-4 offset-4">
-          <img className="logoSignup" src={logo} alt="logo" />
-          <div className="card signup">
-            <div className="card-body">
-              <form onSubmit={e => this.login(e)}>
-                <div className="form-group">
-                  <input
-                    type="email"
-                    className="form-control"
-                    placeholder="Email..."
-                    value={this.state.email}
-                    onChange={e => this.changeEmail(e)}
-                  />
-                </div>
-                <div className="form-group">
-                  <input
-                    type="password"
-                    className="form-control"
-                    placeholder="Password..."
-                    value={this.state.password}
-                    onChange={e => this.changePassword(e)}
-                  />
-                </div>
-                <div className="error">{this.state.error}</div>
-                <button type="submit" className="btn btn-success">
-                  Login
-                </button>
-              </form>
+      <div>
+        <Nav />
+        <div className="row">
+          <div className="col-4 offset-4">
+            <img className="logoSignup" src={logo} alt="logo" />
+            <div className="card signup">
+              <div className="card-body">
+                <form onSubmit={e => this.login(e)}>
+                  <div className="form-group">
+                    <input
+                      type="email"
+                      className="form-control"
+                      placeholder="Email..."
+                      value={this.state.email}
+                      onChange={e => this.changeEmail(e)}
+                    />
+                  </div>
+                  <div className="form-group">
+                    <input
+                      type="password"
+                      className="form-control"
+                      placeholder="Password..."
+                      value={this.state.password}
+                      onChange={e => this.changePassword(e)}
+                    />
+                  </div>
+                  <div className="error">{this.state.error}</div>
+                  <button type="submit" className="btn btn-success">
+                    Login
+                  </button>
+                </form>
+              </div>
             </div>
           </div>
         </div>

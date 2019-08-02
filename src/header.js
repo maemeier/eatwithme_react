@@ -18,15 +18,17 @@ class Header extends Component {
           </Link>
         </div>
 
-        <h1>EAT WITH ME</h1>
-        <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h5>
-        <h5>sed do eiusmod tempor incididunt ut labore et dolore ident,</h5>
-        <h5>sunt in culpa qui officia deserunt mollit anim id est laborum.</h5>
-        <h5>sunt in culpa qui officia deserunt mollit anim id est laborum.</h5>
-        <h5>sunt in culpa qui officia deserunt mollit anim id est laborum.</h5>
+        <h1 className="TitleHeader">EAT WITH ME</h1>
+        <div className="headerText">
+          <h5 className="headerText1">
+            Discover the unique social media dining app that set up you to eat
+            with strangers. Create your events and join breakfast, lunch or
+            dinner with local people.
+          </h5>
+        </div>
 
-        <Link to="/createRestaurant">
-          <button className="createRestaurant"> CREATE RESTAURANT</button>
+        <Link to="/createEvents">
+          <button className="createEvents"> CREATE EVENT</button>
         </Link>
         <br />
         <div className="iconHeader">

@@ -1,50 +1,40 @@
-import React, {Component} from 'react'
-import './body.css'
+import React, { Component } from "react";
+import "./body.css";
+import axios from "axios";
 
-import axios from 'axios';
+class Books extends Component {
+  state = {
+    count: this.props.books,
+    id: this.props.all._id
+  };
 
+  //functions
+  decrementButton = () => {
+    console.log("Booked!");
+    axios
+      .patch(`http://localhost:4000/api/event/${this.state.event._id}`, {
+        books: this.state.event.books - 1
+      })
+      .then(res => {
+        this.setState({
+          event: res.data
+        });
+        console.log("res.data from axios ", res.data);
+      })
+      .catch(err => {
+        console.log("err", err);
+      });
+  };
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHeart } from '@fortawesome/free-solid-svg-icons'
-
-class Books extends Component{
-state = {
-  count: this.props.books,
-  id: this.props.all._id
-}
-
-//functions
-
-increment = () => {
-    this.setState(prevState => {
-       return {count: prevState.count - 1}
-    }, ()=>{
-			axios.patch(`http://localhost:4000/api/getEvent/${this.state.id}`,{books: this.state.count}).then((res)=> {
-        console.log('books');
-			}).catch((err)=> {
-				console.log('err', err);
-			})
-		})
-}
-
-
-
-
-
-
-  render(){
-
-                      return(
-                        <div>
-                            <FontAwesomeIcon icon={faHeart} onClick ={this.increment} style={{color:"#E55681"}} /> ({this.state.count})
-                              <button onClick ={this.increment}> Book this event </button>({this.state.count})
-                              </div>
-    )
+  render() {
+    return (
+      <div>
+        ({this.state.count})
+        <button onClick={this.decrementButton}> Book this event </button>(
+        {this.state.event.books})
+      </div>
+    );
   }
-
-
 }
 
-
-
-export default Books
+export default Books;

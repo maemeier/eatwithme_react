@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./createEvent.css";
+import Nav from "./nav";
 import axios from "axios";
 
 class createRestaurant extends Component {
@@ -9,28 +10,32 @@ class createRestaurant extends Component {
     address: "",
     tel: "",
     price: "",
-    file: null,
-    restaurant: []
+    file: ""
   };
 
-  componentWillMount() {
-    axios.get("http://localhost:4000/api/getRestaurant").then(res => {
-      console.log("REST DATA", res.data);
-    });
-  }
-
-  createrPlace = e => {
+  createRestaurant = e => {
     e.preventDefault();
-    let restaurant = {
-      title: this.state.title,
-      body: this.state.body,
-      address: this.state.address,
-      tel: this.state.tel,
-      price: this.state.price,
-      file: this.state.file
-    };
-
-    console.log("restaurant", restaurant);
+    console.log("state", this.state);
+    let form = new FormData();
+    form.append("title", this.state.title);
+    form.append("body", this.state.body);
+    form.append("address", this.state.address);
+    form.append("Tel", this.state.tel);
+    form.append("price", this.state.price);
+    form.append("file", this.state.file);
+    console.log("form", form);
+    axios
+      .post("http://localhost:4000/api/restaurant", form, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`
+        }
+      })
+      .then(res => {
+        window.location = "/";
+      })
+      .catch(err => {
+        console.log("error>>>>>>", err);
+      });
   };
 
   handleChange = e => {
@@ -39,48 +44,17 @@ class createRestaurant extends Component {
     });
   };
 
-  onSubmit = e => {
-    // Form Data
-
-    e.preventDefault();
-    let restaurant = {
-      title: this.state.title,
-      body: this.state.body,
-      address: this.state.address,
-      tel: this.state.tel,
-      price: this.state.price,
-      file: this.state.file
-    };
-    console.log("stateeeeee", this.state);
+  handleFile = e => {
+    console.log("file");
     this.setState({
-      title: "",
-      body: "",
-      address: "",
-      tel: "",
-      price: "",
-      file: ""
+      file: e.target.files[0]
     });
-    axios
-      .post("http://localhost:4000/api/restaurant", restaurant, {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`
-        }
-      })
-      .then(res => {
-        let restaurant = this.state.restaurant;
-        restaurant.push(res.data);
-        console.log("res", res.data);
-        this.setState({ restaurant });
-      })
-      .catch(err => {
-        console.log("error>>>>>>", err);
-      });
   };
-
   render() {
     return (
       <div>
-        <form>
+        <Nav />
+        <form onSubmit={this.createRestaurant}>
           <div className="eventInput">
             <div className="form-group">
               <label htmlFor="formGroupExampleInput">Title</label>
@@ -153,20 +127,20 @@ class createRestaurant extends Component {
             </div>
 
             <div className="form-group">
-              <label htmlFor="formGroupExampleInput">file</label>
+              <label htmlFor="formGroupExampleInput">Image</label>
               <input
                 type="file"
                 name="file"
                 value={this.state.file}
                 onChange={e => {
-                  this.handleChange(e);
+                  this.handleFile(e);
                 }}
                 className="form-control"
                 placeholder="Upload the file"
               />
             </div>
 
-            <button onClick={this.onSubmit}>Submit</button>
+            <button>Submit</button>
           </div>
         </form>
       </div>

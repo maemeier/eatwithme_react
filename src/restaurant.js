@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./restaurant.css";
 import rest4 from "./image/jan1.jpg";
-import { Link } from "react-router-dom";
+import Nav from "./nav";
 const axios = require("axios");
 
 class Restaurant extends Component {
@@ -24,11 +24,8 @@ class Restaurant extends Component {
   render() {
     return (
       <div className="event">
-        <Link to="/">
-          <button className="signup" type="button" name="button">
-            HOME
-          </button>
-        </Link>
+        <Nav />
+
         <div className="bodyEvent">
           <div className="imageRestaurant">
             <img className="restaurant" src={rest4} alt="rest1" />

@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import App from "./App";
 
 // import Event from './event'
-// import CreateEvent from "./createEvents";
+import CreateEvents from "./createEvents";
 import CreateRestaurant from "./createRestaurant";
 import Signup from "./signup";
 import Login from "./login";
@@ -52,6 +52,7 @@ class Routes extends Component {
       <BrowserRouter>
         <Switch>
           <Route path="/restaurant/:id" component={Restaurant} />
+          <Route path="/createEvents" component={CreateEvents} />
           <Route path="/createRestaurant" component={CreateRestaurant} />
           <Route path="/userProfile" component={UserProfile} />
           <Route path="/login" component={() => <Login auth={this.auth} />} />

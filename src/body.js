@@ -86,7 +86,9 @@ class Body extends Component {
             );
           })}
         </div>
+
         <div className="eventBox1"></div>
+
         <div className="wrapper">
           {this.state.event.map(c => {
             return (
@@ -100,7 +102,9 @@ class Body extends Component {
                     <Likes all={c} likes={c.likes} key={c._id} />{" "}
                   </span>
                 </h6>
-                <h6 className="city">{c.city}, Thailand</h6>
+                <h6 className="city">
+                  {c.city}, {c.country}
+                </h6>
               </div>
             );
           })}
