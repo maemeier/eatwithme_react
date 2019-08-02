@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./createEvent.css";
+import Nav from "./nav";
 import axios from "axios";
 
 class createEvents extends Component {
@@ -12,29 +13,60 @@ class createEvents extends Component {
     time: "",
     person: "",
     file: "",
-    event: []
+		events: []
+
   };
 
-  componentWillMount() {
-    axios.get("http://localhost:4000/api/getEvent").then(res => {
-      console.log("REST DATA", res.data);
-    });
-  }
+	componentDidMount(){
+			axios.get("http://localhost:4000/api/getEvent").then((res)=>{
+				console.log("res data", res.data);
+				this.setState({
+					events: res.data
 
-  createrPlace = e => {
+				})
+				console.log("event" ,this.state);
+			}).catch((err)=>{
+				console.log("err axois getEvent", err);
+			})
+	}
+
+  createEvent = e => {
     e.preventDefault();
-    let event = {
-      title: this.state.title,
-      body: this.state.body,
-      city: this.state.city,
-      country: this.state.country,
-      date: this.state.date,
-      time: this.state.time,
-      number: this.state.number,
-      file: this.state.file
-    };
+    console.log("state", this.state);
+		// let file_holder = new FormData()
+		// file_holder.append('file', this.state.file)
+		// file_holder.append('title', this.state.title)
+		// file_holder.append('body', this.state.body)
+		// file_holder.append('city', this.state.city)
+		// file_holder.append('country', this.state.country)
+		// file_holder.append('date', this.state.date)
+		// file_holder.append('time', this.state.time)
+		// file_holder.append('person', this.state.person)
 
-    console.log("event", event);
+    let form = new FormData();
+    form.append("title", this.state.title);
+    form.append("body", this.state.body);
+    form.append("city", this.state.city);
+    form.append("country", this.state.country);
+    form.append("datetime", `${this.state.date}T${this.state.time}`);
+    form.append("person", this.state.person);
+    form.append("file", this.state.file);
+    console.log("form", form);
+    axios
+      .post("http://localhost:4000/api/event", form, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`
+        }
+      })
+      .then((res) => {
+				let event = this.state.events
+				event.push(res.data)
+				this.setState({event})
+        window.location = "/";
+      })
+      .catch((err) => {
+        console.log("error>>>>>>", err);
+      });
   };
 
   handleChange = e => {
@@ -43,165 +75,135 @@ class createEvents extends Component {
     });
   };
 
-  onSubmit = e => {
-    e.preventDefault();
-    let event = {
-      title: this.state.title,
-      body: this.state.body,
-      city: this.state.city,
-      country: this.state.country,
-      date: this.state.date,
-      time: this.state.time,
-      number: this.state.number,
-      file: this.state.file
-    };
-    console.log("stateeeeee", this.state);
+  handleFile = e => {
+    console.log("file");
     this.setState({
-      title: "",
-      body: "",
-      city: "",
-      country: "",
-      date: "",
-      time: "",
-      number: "",
-      file: ""
+      file: e.target.files[0]
     });
-    axios
-      .post("http://localhost:4000/api/event", event, {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`
-        }
-      })
-      .then(res => {
-        let event = this.state.event;
-        event.push(res.data);
-        console.log("res", res.data);
-        this.setState({ event });
-      })
-      .catch(err => {
-        console.log("error>>>>>>", err);
-      });
   };
 
   render() {
     return (
-      <div className="eventForm">
-        <form>
-          <h1>Test</h1>
-          <div className="form-group">
-            <label htmlFor="formGroupExampleInput">Title</label>
-            <input
-              type="text"
-              name="title"
-              value={this.state.title}
-              onChange={e => {
-                this.handleChange(e);
-              }}
-              className="form-control"
-              placeholder="Plese add your title"
-            />
-          </div>
+      <div className="eventsForm">
+        <Nav />
 
-          <div className="form-group">
-            <label htmlFor="formGroupExampleInput">Details</label>
-            <input
-              type="text"
-              name="body"
-              value={this.state.body}
-              onChange={e => {
-                this.handleChange(e);
-              }}
-              className="form-control"
-              placeholder="Tell us about your event"
-            />
-          </div>
+        <div className="eventForm">
+          <form onSubmit={(e)=> {
+						this.createEvent(e)
+						}}>
+            <div className="form-group">
+              <label htmlFor="formGroupExampleInput">Title</label>
+              <input
+                type="text"
+                name="title"
+                value={this.state.title}
+                onChange={e => {
+                  this.handleChange(e);
+                }}
+                className="form-control"
+                placeholder="Plese add your title"
+              />
+            </div>
 
-          <div className="form-group">
-            <label htmlFor="formGroupExampleInput">City</label>
-            <input
-              type="city"
-              name="city"
-              value={this.state.city}
-              onChange={e => {
-                this.handleChange(e);
-              }}
-              className="form-control"
-              placeholder="Plese type the city"
-            />
-          </div>
+            <div className="form-group">
+              <label htmlFor="formGroupExampleInput">Details</label>
+              <input
+                type="text"
+                name="body"
+                value={this.state.body}
+                onChange={e => {
+                  this.handleChange(e);
+                }}
+                className="form-control"
+                placeholder="Tell us about your event"
+              />
+            </div>
 
-          <div className="form-group">
-            <label htmlFor="formGroupExampleInput">country</label>
-            <input
-              type="country"
-              name="country"
-              value={this.state.country}
-              onChange={e => {
-                this.handleChange(e);
-              }}
-              className="form-control"
-              placeholder="Plese type the country"
-            />
-          </div>
+            <div className="form-group">
+              <label htmlFor="formGroupExampleInput">City</label>
+              <input
+                type="city"
+                name="city"
+                value={this.state.city}
+                onChange={e => {
+                  this.handleChange(e);
+                }}
+                className="form-control"
+                placeholder="Plese type the city"
+              />
+            </div>
 
-          <div className="form-group">
-            <label htmlFor="formGroupExampleInput">date</label>
-            <input
-              type="date"
-              name="date"
-              value={this.state.date}
-              onChange={e => {
-                this.handleChange(e);
-              }}
-              className="form-control"
-              placeholder="Plese add your test"
-            />
-          </div>
+            <div className="form-group">
+              <label htmlFor="formGroupExampleInput">Country</label>
+              <input
+                type="country"
+                name="country"
+                value={this.state.country}
+                onChange={e => {
+                  this.handleChange(e);
+                }}
+                className="form-control"
+                placeholder="Plese type the country"
+              />
+            </div>
 
-          <div className="form-group">
-            <label htmlFor="formGroupExampleInput">time</label>
-            <input
-              type="time"
-              name="time"
-              value={this.state.time}
-              onChange={e => {
-                this.handleChange(e);
-              }}
-              className="form-control"
-              placeholder="Plese add your test"
-            />
-          </div>
+            <div className="form-group">
+              <label htmlFor="formGroupExampleInput">Date</label>
+              <input
+                type="date"
+                name="date"
+                value={this.state.date}
+                onChange={e => {
+                  this.handleChange(e);
+                }}
+                className="form-control"
+                placeholder="Plese add your test"
+              />
+            </div>
 
-          <div className="form-group">
-            <label htmlFor="formGroupExampleInput">number of person </label>
-            <input
-              type="number"
-              name="number"
-              value={this.state.number}
-              onChange={e => {
-                this.handleChange(e);
-              }}
-              className="form-control"
-              placeholder="Plese add your test"
-            />
-          </div>
+            <div className="form-group">
+              <label htmlFor="formGroupExampleInput">Time</label>
+              <input
+                type="time"
+                name="time"
+                value={this.state.time}
+                onChange={e => {
+                  this.handleChange(e);
+                }}
+                className="form-control"
+                placeholder="Plese add your test"
+              />
+            </div>
 
-          <div className="form-group">
-            <label htmlFor="formGroupExampleInput">Image</label>
-            <input
-              type="file"
-              name="file"
-              value={this.state.file}
-              onChange={e => {
-                this.handleChange(e);
-              }}
-              className="form-control"
-              placeholder="Plese add your test"
-            />
-          </div>
+            <div className="form-group">
+              <label htmlFor="formGroupExampleInput">Number of people </label>
+              <input
+                type="number"
+                name="person"
+                value={this.state.person}
+                onChange={e => {
+                  this.handleChange(e);
+                }}
+                className="form-control"
+                placeholder="Plese add your test"
+              />
+            </div>
 
-          <button onClick={this.onSubmit}>Submit</button>
-        </form>
+            <div className="form-group">
+              <label htmlFor="formGroupExampleInput">Image</label>
+              <input
+                type="file"
+                name="file"
+                onChange={e => {
+                  this.handleFile(e);
+                }}
+                className="form-control"
+              />
+            </div>
+
+            <button type="submit">Submit</button>
+          </form>
+        </div>
       </div>
     );
   }

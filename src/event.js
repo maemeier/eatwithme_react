@@ -90,6 +90,7 @@ class Event extends Component {
                 onClick={() => this.book()}
               >
                 BOOK THIS EVENT
+								
               </button>
             </div>
           </div>
