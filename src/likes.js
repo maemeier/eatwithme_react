@@ -21,7 +21,7 @@ class Likes extends Component {
       },
       () => {
         axios
-          .patch(`${process.env.REACT_APP_API}/api/getEvent/${this.state.id}`, {
+          .patch(`${process.env.REACT_APP_API}api/getEvent/${this.state.id}`, {
             likes: this.state.count
           })
           .then(res => {

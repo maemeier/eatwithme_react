@@ -13,7 +13,7 @@ class Restaurant extends Component {
   componentWillMount() {
     axios
       .get(
-        `${process.env.REACT_APP_API}/api/getanRestaurant/${this.props.match.params.id}`
+        `${process.env.REACT_APP_API}api/getanRestaurant/${this.props.match.params.id}`
       )
       .then(restaurant => {
         console.log("restaurant", restaurant);

@@ -16,7 +16,7 @@ class createRestaurant extends Component {
 
   componentDidMount() {
     axios
-      .get(`${process.env.REACT_APP_API}/api/getRestaurant"`)
+      .get(`${process.env.REACT_APP_API}api/getRestaurant"`)
       .then(res => {
         console.log("res data", res.data);
         this.setState({
@@ -41,7 +41,7 @@ class createRestaurant extends Component {
     form.append("file", this.state.file);
     console.log("form", form);
     axios
-      .post(`${process.env.REACT_APP_API}/api/restaurant`, form, {
+      .post(`${process.env.REACT_APP_API}api/restaurant`, form, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`
         }

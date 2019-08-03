@@ -15,7 +15,7 @@ class UserProfile extends Component {
 
   componentWillMount() {
     axios
-      .get(`${process.env.REACT_APP_API}/api/profile`, {
+      .get(`${process.env.REACT_APP_API}api/profile`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`
         }
@@ -26,7 +26,7 @@ class UserProfile extends Component {
         console.log("userdata", user.data);
       });
     axios
-      .get(`${process.env.REACT_APP_API}/api/getanEvent`, {
+      .get(`${process.env.REACT_APP_API}api/getanEvent`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`
         }

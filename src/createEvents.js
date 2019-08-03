@@ -18,7 +18,7 @@ class createEvents extends Component {
 
   componentDidMount() {
     axios
-      .get(`${process.env.REACT_APP_API}/api/getEvent`)
+      .get(`${process.env.REACT_APP_API}api/getEvent`)
       .then(res => {
         console.log("res data", res.data);
         this.setState({
@@ -44,7 +44,7 @@ class createEvents extends Component {
     form.append("file", this.state.file);
     console.log("form", form);
     axios
-      .post(`${process.env.REACT_APP_API}/api/event`, form, {
+      .post(`${process.env.REACT_APP_API}api/event`, form, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`
         }

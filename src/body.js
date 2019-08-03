@@ -17,7 +17,7 @@ class Body extends Component {
   };
 
   componentWillMount() {
-    axios.get(`${process.env.REACT_APP_API}/api/getEvent`).then(res => {
+    axios.get(`${process.env.REACT_APP_API}api/getEvent`).then(res => {
       console.log("rrrr", res.data);
       this.setState({ event: res.data });
       this.setState({ count: res.data.likes });
@@ -25,7 +25,7 @@ class Body extends Component {
       console.log(this.state.event[0].title);
       console.log(this.state.event[0].city);
     });
-    axios.get(`${process.env.REACT_APP_API}/api/getRestaurant`).then(res => {
+    axios.get(`${process.env.REACT_APP_API}api/getRestaurant`).then(res => {
       console.log(res.data);
       this.setState({ restaurant: res.data });
 

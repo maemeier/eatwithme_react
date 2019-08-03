@@ -12,7 +12,7 @@ class test extends Component {
   };
 
   componentWillMount() {
-    axios.get(`${process.env.REACT_APP_API}/api/getRestaurant`).then(res => {
+    axios.get(`${process.env.REACT_APP_API}api/getRestaurant`).then(res => {
       console.log("REST DATA", res.data);
     });
   }
@@ -26,7 +26,7 @@ class test extends Component {
       price: this.state.price
     };
     axios
-      .post(`${process.env.REACT_APP_API}/api/restaurant`, restaurant, {
+      .post(`${process.env.REACT_APP_API}api/restaurant`, restaurant, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`
         }
