@@ -13,24 +13,23 @@ class createEvents extends Component {
     time: "",
     person: "",
     file: "",
-		events: [],
-
+    events: []
   };
 
-
-
-	componentDidMount(){
-			axios.get("http://localhost:4000/api/getEvent").then((res)=>{
-				console.log("res data", res.data);
-				this.setState({
-					events: res.data
-
-				})
-				console.log("event" ,this.state);
-			}).catch((err)=>{
-				console.log("err axois getEvent", err);
-			})
-	}
+  componentDidMount() {
+    axios
+      .get(`${process.env.REACT_APP_API}/api/getEvent`)
+      .then(res => {
+        console.log("res data", res.data);
+        this.setState({
+          events: res.data
+        });
+        console.log("event", this.state);
+      })
+      .catch(err => {
+        console.log("err axois getEvent", err);
+      });
+  }
 
   createEvent = e => {
     e.preventDefault();
@@ -45,18 +44,18 @@ class createEvents extends Component {
     form.append("file", this.state.file);
     console.log("form", form);
     axios
-      .post("http://localhost:4000/api/event", form, {
+      .post(`${process.env.REACT_APP_API}/api/event`, form, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`
         }
       })
-      .then((res) => {
-				let event = this.state.events
-				event.push(res.data)
-				this.setState({event})
+      .then(res => {
+        let event = this.state.events;
+        event.push(res.data);
+        this.setState({ event });
         window.location = "/";
       })
-      .catch((err) => {
+      .catch(err => {
         console.log("error>>>>>>", err);
       });
   };
@@ -74,19 +73,17 @@ class createEvents extends Component {
     });
   };
 
-
-
-
   render() {
     return (
-
       <div className="eventsForm">
         <Nav />
 
         <div className="eventForm">
-          <form onSubmit={(e)=> {
-						this.createEvent(e)
-						}}>
+          <form
+            onSubmit={e => {
+              this.createEvent(e);
+            }}
+          >
             <div className="form-group">
               <label htmlFor="formGroupExampleInput">Title</label>
               <input

@@ -12,7 +12,7 @@ class Body extends Component {
   };
 
   componentWillMount() {
-    axios.get("http://localhost:4000/api/getRestaurant").then(res => {
+    axios.get(`${process.env.REACT_APP_API}/api/getRestaurant`).then(res => {
       console.log(res.data);
       this.setState({ restaurant: res.data });
 

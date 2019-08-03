@@ -12,7 +12,7 @@ class Books extends Component {
   decrementButton = () => {
     console.log("Booked!");
     axios
-      .patch(`http://localhost:4000/api/event/${this.state.event._id}`, {
+      .patch(`${process.env.REACT_APP_API}/api/event/${this.state.event._id}`, {
         books: this.state.event.books - 1
       })
       .then(res => {

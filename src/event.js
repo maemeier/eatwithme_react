@@ -23,7 +23,7 @@ class Event extends Component {
 
   componentWillMount() {
     axios
-      .get(`http://localhost:4000/api/getanEvent/${this.props.id}`)
+      .get(`${process.env.REACT_APP_API}/api/getanEvent/${this.props.id}`)
       .then(event => {
         console.log("event", event);
         this.setState({ event: event.data });
@@ -35,7 +35,7 @@ class Event extends Component {
       console.log("book");
       axios
         .patch(
-          `http://localhost:4000/api/events/${this.props.id}`,
+          `${process.env.REACT_APP_API}/api/events/${this.props.id}`,
           {
             attend: true
           },
