@@ -8,7 +8,7 @@ class UserProfile extends Component {
   state = {
     id: this.props.match.params.id,
     user: {},
-		event: [],
+		event: [1 , 2],
   }
 
   componentWillMount() {
