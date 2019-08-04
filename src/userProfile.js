@@ -59,12 +59,12 @@ class UserProfile extends Component {
 								return <div className="userEvent">
 		              <h5 className="profileName">Date:{e.datetime}</h5>
 		              <span>
-		                <h5 className="profileName">Event: {e.body}</h5>
+		                <h5 className="profileName">Event: {e.title}</h5>
 		              </span>
 		            </div>
 							})
 						}
-            
+
             <button className="deleteEvent" onClick={this.logout}>
               SIGN OUT
             </button>
