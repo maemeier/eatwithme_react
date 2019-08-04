@@ -43,6 +43,7 @@ class UserProfile extends Component {
   }
 
   render() {
+		console.log(this.state.event);
     return (
       <div>
         <Nav />
@@ -55,6 +56,16 @@ class UserProfile extends Component {
           </div>
 
           <div className="eventList">
+						{
+							this.state.event.map((e) =>{
+								return <div className="userEvent">
+		              <h5 className="profileName">Date:{this.state.event.datetime}</h5>
+		              <span>
+		                <h5 className="profileName">Event: {this.state.event.id}</h5>
+		              </span>
+		            </div>
+							})
+						}
             <div className="userEvent">
               <h5 className="profileName">Date:{this.state.event.datetime}</h5>
               <span>
