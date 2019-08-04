@@ -8,7 +8,7 @@ class UserProfile extends Component {
   state = {
     id: this.props.match.params.id,
     user: {},
-		event: [1 , 2],
+		event: [],
   }
 
   componentWillMount() {
@@ -57,19 +57,14 @@ class UserProfile extends Component {
 						{
 							this.state.event.map((e) =>{
 								return <div className="userEvent">
-		              <h5 className="profileName">Date:{this.state.event.datetime}</h5>
+		              <h5 className="profileName">Date:{e.datetime}</h5>
 		              <span>
-		                <h5 className="profileName">Event: {this.state.event.id}</h5>
+		                <h5 className="profileName">Event: {e.body}</h5>
 		              </span>
 		            </div>
 							})
 						}
-            <div className="userEvent">
-              <h5 className="profileName">Date:{this.state.event.datetime}</h5>
-              <span>
-                <h5 className="profileName">Event: {this.state.event.id}</h5>
-              </span>
-            </div>
+            
             <button className="deleteEvent" onClick={this.logout}>
               SIGN OUT
             </button>
