@@ -24,13 +24,13 @@ class UserProfile extends Component {
         this.setState({ user: user.data });
         console.log("userdata", user.data);
       });
-    axios.get(`${process.env.REACT_APP_API}api/getanEvent`, {
+    axios.get(`${process.env.REACT_APP_API}api/getuserevents`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`
         }
       })
       .then(event => {
-        console.log("get Event", event);
+        console.log("get Events", event);
         this.setState({ event: event.data });
         console.log("userdata", event.data);
       });
