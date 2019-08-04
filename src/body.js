@@ -22,15 +22,15 @@ class Body extends Component {
       this.setState({ event: res.data });
       this.setState({ count: res.data.likes });
 
-      console.log(this.state.event[0].title);
-      console.log(this.state.event[0].city);
+      // console.log(this.state.event[0].title);
+      // console.log(this.state.event[0].city);
     });
     axios.get(`${process.env.REACT_APP_API}api/getRestaurant`).then(res => {
       console.log(res.data);
       this.setState({ restaurant: res.data });
 
-      console.log(this.state.restaurant[0].title);
-      console.log(this.state.restaurant[0].city);
+      // console.log(this.state.restaurant[0].title);
+      // console.log(this.state.restaurant[0].city);
     });
   }
   // createRestaurant function
@@ -48,7 +48,7 @@ class Body extends Component {
         <div>
           <h3 className="bodyText">
             {" "}
-            <span class="badge badge-dark">Recommend Restaurant </span>
+            <span className="badge badge-dark">Recommend Restaurant </span>
           </h3>
           <div className="body1">
             <div className="wrapper">
@@ -72,7 +72,7 @@ class Body extends Component {
         <div>
           <h3 className="bodyText">
             {" "}
-            <span class="badge badge-dark"> Events </span>
+            <span className="badge badge-dark"> Events </span>
           </h3>
           <div className="body">
             <div className="wrapper">
