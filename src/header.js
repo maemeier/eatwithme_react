@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import "./header.css";
-import logo from "./image/logoeat.png";
+// import logo from "./image/logoeat.png";
 import pizza from "./image/pizza.png";
 import drink from "./image/drink.png";
 import bread from "./image/bread.png";
-import signup from "./image/signup.png";
+// import signup from "./image/signup.png";
 import { Link } from "react-router-dom";
 
 class Header extends Component {
