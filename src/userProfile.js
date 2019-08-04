@@ -8,10 +8,8 @@ class UserProfile extends Component {
   state = {
     id: this.props.match.params.id,
     user: {},
-
-    idEvent: this.props.match.params.id,
-    event: {}
-  };
+		event: [],
+  }
 
   componentWillMount() {
     axios.get(`${process.env.REACT_APP_API}api/profile`, {
