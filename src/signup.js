@@ -28,6 +28,7 @@ class Signup extends Component {
     axios
       .post(`${process.env.REACT_APP_API}api/signup`, this.state)
       .then(res => {
+					console.log('rres', res);
         localStorage.setItem("token", res.data.token);
         this.props.auth();
       })
