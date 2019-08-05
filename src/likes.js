@@ -20,14 +20,11 @@ class Likes extends Component {
         return { count: prevState.count + 1 };
       },
       () => {
-        axios
-          .patch(`${process.env.REACT_APP_API}api/getEvent/${this.state.id}`, {
-            likes: this.state.count
-          })
-          .then(res => {
-            console.log("like");
-          })
-          .catch(err => {
+        axios.patch(`${process.env.REACT_APP_API}api/likes/${this.state.id}`, {likes: this.state.count}, {
+	        headers: {Authorization: `Bearer ${localStorage.getItem("token")}`}
+	      }).then(res => {console.log("like");
+
+				}).catch(err => {
             console.log("err", err);
           });
       }
