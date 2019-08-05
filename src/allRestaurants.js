@@ -4,6 +4,7 @@ import "./footer.css";
 import Nav from "./nav";
 import Header from "./header";
 // import Footer from "./footer";
+
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMedal } from "@fortawesome/free-solid-svg-icons";
@@ -44,7 +45,8 @@ class Body extends Component {
                   </a>
                   <h6 className="title">{c.title} </h6>
                   <h6 className="city">
-                    {c.city}, Thailand ({c.like})
+                    {c.city}, Thailand
+
                   </h6>
                 </div>
               );

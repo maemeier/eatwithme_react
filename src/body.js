@@ -60,7 +60,7 @@ class Body extends Component {
                     </a>
                     <h6 className="title">{c.title} </h6>
                     <h6 className="city">
-                      {c.city}, Thailand ({c.like})
+                      {c.city}, Thailand 
                     </h6>
                   </div>
                 );
