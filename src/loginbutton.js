@@ -6,7 +6,7 @@ class Loginbutton extends React.Component {
     return (
       <Link to="/login">
         {" "}
-        <li>Login</li>{" "}
+        <li>Sign up</li>{" "}
       </Link>
     );
   }

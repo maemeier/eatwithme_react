@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import "./body.css";
+import "./footer.css";
 import Nav from "./nav";
 import Header from "./header";
+// import Footer from "./footer";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMedal } from "@fortawesome/free-solid-svg-icons";
@@ -24,7 +26,8 @@ class Body extends Component {
 
   render() {
     return (
-      <div>
+			<div>
+      <div className="mainRestaurant">
         <Nav />
         <Header />
         <h3 className="allRestaurantsText">
@@ -37,7 +40,7 @@ class Body extends Component {
               return (
                 <div>
                   <a href={`/restaurant/${c._id}`}>
-                    <img className="sponser" src={c.image} alt="rest1" />
+                    <img className="sponser" src={c.file} alt="rest1" />
                   </a>
                   <h6 className="title">{c.title} </h6>
                   <h6 className="city">
@@ -48,7 +51,9 @@ class Body extends Component {
             })}
           </div>
         </div>
+
       </div>
+			</div>
     );
   }
 }

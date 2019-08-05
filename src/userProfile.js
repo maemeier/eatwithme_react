@@ -46,6 +46,9 @@ class UserProfile extends Component {
       <div>
         <Nav />
         <div className="userProfile">
+					<button className="deleteEvent" onClick={this.logout}>
+						SIGN OUT
+					</button>
           <div className="profile">
             <h1 className="profileTitle">Profile</h1>
             <h5 className="profileName">Name: {this.state.user.name}</h5>
@@ -65,9 +68,6 @@ class UserProfile extends Component {
 							})
 						}
 
-            <button className="deleteEvent" onClick={this.logout}>
-              SIGN OUT
-            </button>
           </div>
         </div>
       </div>

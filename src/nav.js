@@ -21,7 +21,7 @@ class Header extends Component {
             <li>Home</li>
           </Link>
           <Link to="/allRestaurants" style={{ textDecoration: "none" }}>
-            <li>Restaurant</li>
+            <li>Restaurants</li>
           </Link>
           {this.checkAuth() ? <Logout /> : <Loginbutton />}
         </ul>

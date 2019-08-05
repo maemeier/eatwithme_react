@@ -28,7 +28,7 @@ class Restaurant extends Component {
 
         <div className="bodyEvent">
           <div className="imageRestaurant">
-            <img className="restaurant" src={rest4} alt="rest1" />
+            <img className="restaurant" src={this.state.restaurant.file} alt="rest1" />
           </div>
           <div className="detail">
             <h3 className="restTitle">{this.state.restaurant.title}</h3>

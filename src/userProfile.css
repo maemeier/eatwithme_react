@@ -2,7 +2,8 @@
   margin-left: 1100px;
 }
 .userProfile {
-  margin-left: 250px;
+  margin-left: 0px;
+	margin-right: 50px;
 }
 .profile {
   margin-left: 90px;
@@ -13,8 +14,8 @@
 .profileName {
   color: #333333;
   text-align: left;
-	font-size: 14px
-}
+	font-size: 14px;
+},
 .userProfile {
   margin-top: 130px;
 }
@@ -57,7 +58,9 @@ button.deleteEvent {
   height: 40px;
   margin-top: 40px;
   margin-left: 10px;
+	margin-left: 1000px;
 }
+
 .eventList {
   display: grid;
   grid-template-columns: 1fr 1fr;
