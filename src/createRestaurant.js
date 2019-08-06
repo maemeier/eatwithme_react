@@ -10,6 +10,7 @@ class createRestaurant extends Component {
     address: "",
     tel: "",
     price: "",
+		cit: "",
     file: "",
     restaurants: []
   };
@@ -38,6 +39,7 @@ class createRestaurant extends Component {
     form.append("address", this.state.address);
     form.append("Tel", this.state.tel);
     form.append("price", this.state.price);
+		form.append("city", this.state.city);
     form.append("file", this.state.file);
     console.log("form", form);
     axios
@@ -47,6 +49,10 @@ class createRestaurant extends Component {
         }
       })
       .then(res => {
+				if (res.data === 'not an admin') {
+					alert('sorry you must be an admin to post a resturant')
+				}
+
         let restaurant = this.state.restaurants;
         restaurant.push(res.data);
         this.setState({ restaurant });
@@ -120,6 +126,20 @@ class createRestaurant extends Component {
                 placeholder="Plese add your test"
               />
             </div>
+
+						<div className="form-group">
+							<label htmlFor="formGroupExampleInput">City</label>
+							<input
+								type="text"
+								name="city"
+								value={this.state.city}
+								onChange={e => {
+									this.handleChange(e);
+								}}
+								className="form-control"
+								placeholder="Plese add your test"
+							/>
+						</div>
 
             <div className="form-group">
               <label htmlFor="formGroupExampleInput">Tel</label>

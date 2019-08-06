@@ -1,3 +1,9 @@
+.wrapperProfile {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+	margin-left: 120px
+}
+
 .userHome {
   margin-left: 1100px;
 }
@@ -58,7 +64,7 @@ button.deleteEvent {
   height: 40px;
   margin-top: 40px;
   margin-left: 10px;
-	margin-left: 1000px;
+	margin-left: 1200px;
 }
 
 .eventList {

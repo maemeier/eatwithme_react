@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./userProfile.css";
 import Nav from "./nav";
 
+
 const axios = require("axios");
 
 class UserProfile extends Component {
@@ -57,16 +58,23 @@ class UserProfile extends Component {
           </div>
 
           <div className="eventList">
-						{
-							this.state.event.map((e) =>{
-								return <div className="userEvent">
-		              <h5 className="profileName">Date:{e.datetime}</h5>
-		              <span>
-		                <h5 className="profileName">Event: {e.title}</h5>
-		              </span>
-		            </div>
-							})
-						}
+						<div className="wrapperProfile">
+              {this.state.event.map(c => {
+                return (
+                  <div>
+                    <a href={`/events/${c._id}`}>
+                      <img className="sponser" src={c.file} alt="rest1" />
+                    </a>
+                    <h6 className="title">
+                      {c.title}, {c.city}{" "}
+                    </h6>
+                    <h6 className="time">
+                      {c.datetime}
+                    </h6>
+                  </div>
+                );
+              })}
+            </div>
 
           </div>
         </div>
