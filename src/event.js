@@ -13,8 +13,9 @@ class Event extends Component {
     count: 0,
     button: "BOOK THIS EVENT",
     color: {
-      background: "green"
-    }
+      background: "#68d253, #28a80f"
+    },
+
   };
 
   bookedEvent() {
@@ -30,7 +31,7 @@ class Event extends Component {
 				let event1 = event.data
 				event1.datetime = moment(event.data.datetime).format('D MMM YYYY - h:mma')
         this.setState({ event: event1 });
-				
+
       });
   }
 
@@ -51,12 +52,15 @@ class Event extends Component {
         )
         .then(res => {
 					// console.log('res.data', res.data);
+
           this.setState({
             event: res.data,
             button: "ITZ BOOKED!",
             color: {
               background: "grey"
-            }
+            },
+						// time: this.state.event.data.dat
+
           });
         })
         .catch(err => {
