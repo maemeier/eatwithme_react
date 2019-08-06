@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./userProfile.css";
 import moment from "moment"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCalendar } from "@fortawesome/free-solid-svg-icons";
 import Nav from "./nav";
 
 
@@ -76,9 +78,12 @@ class UserProfile extends Component {
                     <h6 className="title">
                       {c.title}, {c.city}{" "}
                     </h6>
-                    <h6 className="time">
+
+                    <h6 className="time"> <span><FontAwesomeIcon
+						          icon={faCalendar} style={{ color: "#7F977D" }}/ > </span>
                       {moment(c.datetime).format('D MMM YYYY - h:mma')}
                     </h6>
+
                   </div>
                 );
               })}
