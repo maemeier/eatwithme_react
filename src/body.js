@@ -41,8 +41,8 @@ class Body extends Component {
         <div className="boxAds">
           <p className="bodyTextAds">
             Discover the unique social media dining app that set up you to eat
-            with strangers. Create your events and join breakfast, lunch or
-            dinner with local people.
+            with strangers. Create your events and join breakfast or
+            dinner with local people. Because eating together is always more delicious than eating alone!
           </p>
         </div>
         <div>
@@ -60,7 +60,7 @@ class Body extends Component {
                     </a>
                     <h6 className="title">{c.title} </h6>
                     <h6 className="city">
-                      {c.city}, Thailand 
+                      {c.city}, Thailand
                     </h6>
                   </div>
                 );

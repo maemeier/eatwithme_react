@@ -16,9 +16,8 @@ class Header extends Component {
         <h1 className="TitleHeader">EAT WITH ME</h1>
         <div className="headerText">
           <h5 className="headerText1">
-            Discover the unique social media dining app that set up you to eat
-            with strangers. Create your events and join breakfast, lunch or
-            dinner with local people.
+						There are many food & eating related applications from searching for restaurant to posting food images or learning how to cook. Online trend is tempting toward what should be the newest thing to eat. But have you ever had the feeling that you are missing out on those new food just because you don't want to eat alone in that trendy restaurant?
+
           </h5>
         </div>
 

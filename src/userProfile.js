@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./userProfile.css";
+import moment from "moment"
 import Nav from "./nav";
 
 
@@ -10,6 +11,7 @@ class UserProfile extends Component {
     id: this.props.match.params.id,
     user: {},
 		event: [],
+		date: '',
   }
 
   componentWillMount() {
@@ -20,6 +22,7 @@ class UserProfile extends Component {
       })
       .then(user => {
         console.log("userProfile", user);
+
         this.setState({ user: user.data });
         console.log("userdata", user.data);
       });
@@ -29,11 +32,16 @@ class UserProfile extends Component {
         }
       })
       .then(event => {
-        console.log("get Events", event);
+
+
+				console.log('fgfgf',this.state.date);
         this.setState({ event: event.data });
         console.log("userdata", event.data);
       });
   }
+
+
+
 
   logout() {
     localStorage.clear();
@@ -69,7 +77,7 @@ class UserProfile extends Component {
                       {c.title}, {c.city}{" "}
                     </h6>
                     <h6 className="time">
-                      {c.datetime}
+                      {moment(c.datetime).format('D MMM YYYY - h:mma')}
                     </h6>
                   </div>
                 );

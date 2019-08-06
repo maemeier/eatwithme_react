@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./event.css";
 import Nav from "./nav";
+import moment from 'moment'
 const axios = require("axios");
 
 class Event extends Component {
@@ -25,8 +26,11 @@ class Event extends Component {
     axios
       .get(`${process.env.REACT_APP_API}api/getanEvent/${this.props.id}`)
       .then(event => {
-        console.log("event", event);
-        this.setState({ event: event.data });
+        console.log("event", event.data.guests);
+				let event1 = event.data
+				event1.datetime = moment(event.data.datetime).format('D MMM YYYY - h:mma')
+        this.setState({ event: event1 });
+				
       });
   }
 
@@ -46,6 +50,7 @@ class Event extends Component {
           }
         )
         .then(res => {
+					// console.log('res.data', res.data);
           this.setState({
             event: res.data,
             button: "ITZ BOOKED!",
@@ -77,14 +82,12 @@ class Event extends Component {
           <div className="detail">
             <div className="eventText">
               <h3 className="eventTitle">{this.state.event.title}</h3>
-              <h5 className="event">Date: {this.state.event.datetime} </h5>
-              <h5 className="event">Time: {this.state.event.time}</h5>
+              <h5 className="event">Date and Time: {this.state.event.datetime} </h5>
               <h5 className="event">
                 Max {this.state.event.person} Person /{" "}
                 {this.state.event.person - this.state.event.guests.length}{" "}
                 Avaliable{" "}
               </h5>
-              <span>Staus{this.bookedEvent()}</span>
             </div>
             <div className="eventInfo">
               <div className="eventTextBox">

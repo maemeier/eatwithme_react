@@ -51,7 +51,7 @@ class createEvents extends Component {
       })
       .then(res => {
         let event = this.state.events;
-        event.push(res.data);
+        event.unshift(res.data);
         this.setState({ event });
         window.location = "/";
       })
