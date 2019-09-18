@@ -1,3 +1,21 @@
+EATWITH ME IS MY FINAL PROJECT.  
+"Eat with me is a social media dining app that set up you to eat with strangers. Create your events and join breakfast or dinner with local people."
+https://eatwithme-react.herokuapp.com
+
+Front-End 
+- React 
+- HTML and CSS 
+- Bootstrap
+
+Back-end
+- Nodejs
+- Mongodb
+- Robo3T
+- Cloudinary 
+- Authentication 
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
