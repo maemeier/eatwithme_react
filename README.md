@@ -17,8 +17,6 @@ Back-end
 <h4> Find the events </h4>
 <img width="1433" alt="Screenshot 2019-09-18 at 14 50 04" src="https://user-images.githubusercontent.com/29822960/65146846-769a9c80-da25-11e9-877b-011faefd4caa.png">
 
-
-
 <h4> Join event is super simeple </h4>
 
 <img width="1433" alt="Screenshot 2019-09-18 at 14 51 03" src="https://user-images.githubusercontent.com/29822960/65147006-e0b34180-da25-11e9-88b0-5e58d1ded76f.png">
@@ -26,6 +24,18 @@ Back-end
 <h4>Check your profile </h4>
 
 <img width="1432" alt="Screenshot 2019-09-18 at 14 51 17" src="https://user-images.githubusercontent.com/29822960/65147089-09d3d200-da26-11e9-9ba8-215d2e81c0e3.png">
+
+<h4>List of restaurants </h4>
+<img width="1433" alt="Screenshot 2019-09-18 at 15 11 57" src="https://user-images.githubusercontent.com/29822960/65147377-ae561400-da26-11e9-8ea0-65d3d6c04962.png">
+
+<h4>Check Restaurant details </h4>
+<img width="1434" alt="Screenshot 2019-09-18 at 14 50 36" src="https://user-images.githubusercontent.com/29822960/65147211-57e8d580-da26-11e9-9553-bf50ac50b99b.png">
+
+ROADMAP 
+- Responsive 
+- delete event(s)
+- show profile on event page
+
 
 
 
