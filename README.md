@@ -1,6 +1,6 @@
 EATWITH ME IS MY FINAL PROJECT.  
 "Eat with me is a social media dining app that set up you to eat with strangers. Create your events and join breakfast or dinner with local people." Letz Book! 
-https://eatwithme-react.herokuapp.com
+
 
 Front-End 
 - React 
